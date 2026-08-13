@@ -1,0 +1,67 @@
+const express=require('express');
+const path=require('path');
+const Manger_Router=express.Router();
+
+
+
+const Bank_Manger=require("../controller/Manger_Router_controller");
+const Manager_logout=require('../controller/Manager_Logout_controller');
+const Manager_Account_And_Employee_Details=require('../controller/Manager_Account_And_Employee_Details_controller');
+const Transfer_fund_widthraw_Deposite_check=require('../controller/Manager_Transfer_fund_And_widthraw_depostie_and_check_Transfer_controller');
+const Employee_list=require('../controller/Manager_customer_and_Employee_list_controller');
+const Manager_Add_Employee=require("../controller/Manager_Add_Employee_controller");
+const Remove_Employee=require('../controller/Manager_Remove_Employee_controller');
+const Edit_And_Delete_customer_And_Employee=require("../controller/Manager_Edit_and_Delete_customer_And_Employee_controller");
+const Edit_Employee=require('../controller/Edite_Employee_controller');
+const Edit_And_Delete_Transaction=require('../controller/Edit_and_Delete_Transaction_controller');
+const Single_Branch_Employee=require("../controller/Manager_get_all_Employee_of_Single_Branch_controller");
+
+Manger_Router.get('/logout_M',Manager_logout.logout);
+Manger_Router.get('/Bank_Manager',Bank_Manger.Bank_Manager);
+Manger_Router.get("/customer",Bank_Manger.customer);
+Manger_Router.get('/Employee_list',Bank_Manger.Employee);
+Manger_Router.get('/M_Deposite',Bank_Manger.M_Deposite);
+Manger_Router.get('/M_Widthraw',Bank_Manger.M_Widthraw);
+Manger_Router.get('/check_list',Bank_Manger.check_list);
+Manger_Router.get('/pay_check',Bank_Manger.pay_check);
+Manger_Router.get('/status_M',Bank_Manger.status_M);
+Manger_Router.get('/attendence',Bank_Manger.attendence)
+Manger_Router.get('/Employee_salary_payment',Bank_Manger.Employee_salary_payment);
+Manger_Router.get('/Transfer_Fund_list_M',Bank_Manger.Transfer_Funds_list_M);
+Manger_Router.get('/Amount_Deposite',Bank_Manger.Amount_Deposite);
+Manger_Router.get("/Add_Customer_by_Manager",Bank_Manger.Add_Customer_by_Manager);
+Manger_Router.get("/Remove_customer_by_Manager",Bank_Manger.Remove_customer_by_Manager);
+Manger_Router.get('/Transfer_Mony_Manager',Bank_Manger.Transfer_Mony_Manager);
+Manger_Router.get("/Add_Employee_by_Manager",Bank_Manger.Add_Employee_by_Manager);
+Manger_Router.get("/Remove_Employee_by_Manager",Bank_Manger.Remove_Employee_by_Manager);
+Manger_Router.get('/contact_us_Manager',Bank_Manger.contact_us_Manager);
+Manger_Router.get('/Amount_widthraw',Bank_Manger.Amount_widthraw);
+Manger_Router.get('/Amount_check',Bank_Manger.Amount_check);
+Manger_Router.post('/Account_Details',Manager_Account_And_Employee_Details.Account_Details);
+Manger_Router.post('/Account_Details_Em',Manager_Account_And_Employee_Details.Employee_Account_Details);
+Manger_Router.post('/Manager_Transfer_fund',Transfer_fund_widthraw_Deposite_check.Transfer_Funds);
+Manger_Router.get('/Manager_Employee_list',Employee_list.Employee_list);
+Manger_Router.get('/Manager_Customer_list',Employee_list.Cusomer_list);
+Manger_Router.post("/Manager_add_Employee",Manager_Add_Employee.add_Employee);
+Manger_Router.post('/Remove_Employee',Remove_Employee.Remove_Employee);
+Manger_Router.get('/change_card_And_Account_Status_M',Bank_Manger.change_card_And_Account_Status_M);
+Manger_Router.get('/Delete_Account_by_pagination',Edit_And_Delete_customer_And_Employee.Delete_Account);
+Manger_Router.get('/Edit_customer',Bank_Manger.Edit_customer);
+Manger_Router.get('/Data_for_Edit_customer',Edit_And_Delete_customer_And_Employee.get_Data_For_Edit_Customer);
+Manger_Router.post('/Edit_Account_info',Edit_And_Delete_customer_And_Employee.Edit_Account_info);
+Manger_Router.post("/Edit_customer_info",Edit_And_Delete_customer_And_Employee.Edit_customer_info);
+Manger_Router.post('/Edit_card_info',Edit_And_Delete_customer_And_Employee.Edit_card_info);
+Manger_Router.post('/Edit_login_information',Edit_And_Delete_customer_And_Employee.Edit_login_info);
+Manger_Router.get('/Delete_Employee_by_paginatioin',Edit_Employee.Delete_Employee);
+Manger_Router.get('/Edit_Employee_M',Bank_Manger.Edit_Employee);
+Manger_Router.get('/get_data_of_Employee',Edit_Employee.get_Employee_data);
+Manger_Router.post('/Edit_Employee_info',Edit_Employee.Edit_Employee_info);
+Manger_Router.post("/Edit_Employee_login_info",Edit_Employee.Edit_Employee_login_info);
+Manger_Router.get('/Delete_widthraw_by_pagination',Edit_And_Delete_Transaction.Delete_Widthraw_data);
+Manger_Router.post('/Edit_Transaction_by_pagination',Edit_And_Delete_Transaction.Edit_widthraw);
+Manger_Router.get('/delete_Transaction_by_pagination',Edit_And_Delete_Transaction.delete_Transaction_by_pagination);
+Manger_Router.post("/Edit_Transfer_by_pagination",Edit_And_Delete_Transaction.Edit_Transfer_Transaction);
+Manger_Router.get('/get_all_Employee_of_single_Branch',Single_Branch_Employee.get_all_Employee_of_single_Branch);
+Manger_Router.post('/Take_Attendence_by_Manager',Single_Branch_Employee.Take_Attendence_by_Manager);
+Manger_Router.post("/Employee_Attedence_by_user_Name",Single_Branch_Employee.Employee_Attedence_by_user_Name);
+module.exports=Manger_Router;
