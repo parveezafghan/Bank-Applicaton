@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/Bank_Manager_css/Bank_Manager_Add_customer_css.css">
+
+
+    <style>
+
+         .Error {
+
+            color: red;
+        }
+
+        .Bank_card {
+
+            width: 400px;
+            height: 200px;
+            background: rgb(28, 28, 28);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 4px rgb(239, 233, 223);
+
+            display: none;
+
+        }
+
+        .card_header {
+
+            padding-top: 10px;
+            padding-left: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .card_header_1 {
+
+
+            padding-left: 150px;
+
+
+        }
+
+        .imgs {
+
+            padding-top: 25px;
+            margin-left: 40px;
+        }
+
+        .img_2 {
+
+            /* padding-left:50px; */
+            margin-left: 150px;
+
+        }
+
+        .img_1 {
+
+            border-radius: 5px;
+        }
+
+        .number {
+
+            padding-left: 30px;
+            font-size: xx-large;
+        }
+
+        .date {
+
+            padding-left: 243px;
+        }
+
+        .Name {
+            padding-left: 20px;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        @media print {
+
+            body * {
+
+                visibility: hidden;
+            }
+
+            .Bank_card {
+
+                visibility: visible;
+                position: relative;
+                /* left:0;
+                right:0;
+                width:400px;
+                padding:30px; */
+                margin-top: 500px;
+
+                width: 400px;
+                height: 200px;
+                background: rgb(28, 28, 28);
+                background-color: red;
+                color: white;
+                border-radius: 10px;
+                box-shadow: 2px 2px 4px rgb(239, 233, 223);
+                /* margin-top: 0px; */
+            }
+
+            .card_header {
+
+                visibility: visible;
+            }
+
+            .card_header_1 {
+                visibility: visible;
+            }
+
+            .card_header_2 {
+                visibility: visible;
+            }
+
+            .imgs {
+                visibility: visible;
+            }
+
+            .img_1,
+            .img_2 {
+
+                visibility: visible;
+            }
+
+            .number {
+                visibility: visible;
+            }
+
+            .date {
+                visibility: visible;
+            }
+
+            .Num {
+                visibility: visible;
+            }
+
+            .show {
+                visibility: visible;
+            }
+
+            .table {
+
+                visibility: visible;
+                padding-left: -100px;
+            }
+
+            #head {
+
+                visibility: visible;
+            }
+
+            hr {
+                visibility: visible;
+            }
+
+            #body {
+
+                visibility: visible;
+            }
+
+            th {
+
+                visibility: visible;
+            }
+
+            td {
+
+                visibility: visible;
+            }
+        }
+
+
+
+        .show_card {
+
+            display: block;
+        }
+
+        .button {
+
+            height:60px;
+            border: none;
+            border-radius:15px;
+            color:black;
+            display: none;
+        }
+
+        .show_button {
+            /* visibility:visible; */
+            display: block;
+        }
+
+        .info_advice {
+
+            display: flex;
+            justify-content: center;
+            display: none;
+        }
+
+        .h5 {
+
+            font-size: 30px;
+            font-weight: bold;
+            padding-bottom: 30px;
+
+        }
+
+        .table {
+
+            display: none;
+        }
+
+        .show_info {
+
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .show_table {
+
+            display: block;
+        }
+
+
+        /* li {
+
+            margin-left: 15px;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium',
+                /* font-weight: bold; */
+        /* font-style: oblique; */
+
+        ;
+
+        /* color: #91C6BC; */
+        /* } */
+        */ li {
+
+            margin-left: 15px;
+            font-size: large;
+            font-family: 'Franklin Gothic Medium',
+                /* font-weight: bold; */
+                /* font-style: oblique; */
+
+            ;
+            color: #91C6BC;
+        }
+
+        a {
+            text-decoration: none;
+            padding-top: 5px;
+        }
+
+        ul li a {
+
+            font-family: roboto;
+            font-weight: bold;
+        }
+
+        .password_box {
+
+            margin-top: -110px;
+            /* position: fixed; */
+        }
+
+        #dashboard{
+
+            font-size:30px;
+            font-family:roboto;
+            font-weight: bold;
+        }
+       
+        form , body{
+
+            font-family:roboto;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+    
+    <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="customer">Show Customer </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Employee">Show Employees </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            status
+                        </a>
+                        <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#" id="Deposite">Deposite List</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw List</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack List</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list">Transfer Amount List</a></li>
+                              <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                             <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                             <!-- <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li> -->
+                            <!-- <li><a class="dropdown-item" href="#" id="Deposite">Deposite</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list"></a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                            <li><a class="dropdown-item" href="#" id="Logout_1">Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            </li>
+                        </ul>
+                    </li>
+
+                     <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Analytics</a> -->
+                         <a class="nav-link" href="#"  id="status">Analytics</a>
+                    </li>
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ><a class="dropdown-item" href="#" id="Amount_Deposite">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="#" id="Amount_widthraw">Widthraw Balance</a></li>
+                             <li><a class="dropdown-item" href="#" id="pay_check">Give Chack </a></li>
+                             <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                        </ul>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact_us_Manager">Contact Us</a>
+                    </li>
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Body part 1 html -->
+
+    <div class="container height" style="background: #fefefe;">
+        <div class="row" style="padding-top:30px">
+            <div class="col-md-6"><h3 id="dashboard" >Welcome To Manager Dashboard</h3></div>
+            <div class="col-sm-5" >
+                <center><a class="padding"  href="#" id="Logout_2">Logout</a></center>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Body part 2 html -->
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12"> <h4 class="Detials" >Add Customer </h4></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- body part 3 html -->
+
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-6">
+                <ul class="nav nav-tabs justify-content-around">
+                    <li class="nav-item">
+                        <a class="nav-link active color" aria-current="page" href="#" id="Find_Account_Details">Account Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Transfer_Mony_Manager">Transfer</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Body part 4 html -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4" style=" display:flex;flex-direction: column;">
+
+                <a class="font" href="#" id="Find_Account_Details_1">Find Customer </a> 
+                <a class="font" style="background:skyblue;width:200px;border: none;border-radius:5px;color: white;";  href="#" id="Add_Customer_by_Manager">Add Customer</a>
+                <a  class="font"  href="#" id="Remove_customer_by_Manager">Remove Customer</a> 
+            </div>
+
+            <div class="col-5">
+                <h4>Add New Customer</h4>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add New Customer html  -->
+
+    
+
+    <div class="container mt-5">
+
+        <form class="row gy-2 gx-3 align-items-center" id="form">
+
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">First Name</div>
+                    <input type="text" class="form-control" id="First_Name">
+
+                </div>
+                <small id="check_First_Name"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Last Name</div>
+                    <input type="text" class="form-control" id="Last_Name">
+
+                </div>
+                <small id="check_Last_Name"></small>
+            </div>
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">F Name</div>
+                    <input type="text" class="form-control" id="F_Name">
+
+                </div>
+                <small id="check_F_Name"></small>
+            </div>
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Email</div>
+                    <input type="email" class="form-control" id="Email">
+                </div>
+                <small id="check_Email"></small>
+            </div>
+            <div class="col-sm-4 margin_bottom ">
+                <div class="input-group">
+                    <div class="input-group-text">Mobile Number</div>
+                    <input type="text" class="form-control" id="Number">
+
+                </div>
+                <small id="check_Number"></small>
+            </div>
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Data Birth</div>
+                    <input type="date" class="form-control" id="Date">
+
+                </div>
+
+                <small id="check_Date"></small>
+            </div>
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Account Number</div>
+                    <input type="text" class="form-control" id="Account_Number">
+
+                </div>
+                <small id="check_Account_Number"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Card Number</div>
+                    <input type="text" class="form-control" id="card_Number">
+
+                </div>
+                <small id="check_card_Number"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+
+
+                <select class="form-select" id="Account_Type">
+                    <option selected disabled>Choose Account Type...</option>
+                    <option value="saving">Saving</option>
+                    <option value="student">student</option>
+                    <option value="Fixed">Fixed</option>
+                </select>
+
+                <small id="check_Account_Type"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+
+
+                <select class="form-select " id="Branch" id="Branch_id">
+                    <option value="" selected disabled>Select The Branch...</option>
+                    <!-- <option value="saving">Saving</option>
+                    <option value="student">student</option>
+                    <option value="Fixed">Fixed</option> -->
+                </select>
+
+                <small id="check_Branch"></small>
+            </div>
+
+            <div class="col-sm-4 margin_bottom">
+
+
+                <select class="form-select " id="Card">
+                    <option value="" selected disabled>Select The Card...</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Prepaid">Prepaid</option>
+                    <option value="ATM">ATM</option>
+                </select>
+
+                <small id="check_card"></small>
+            </div>
+
+
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">Account Balance</div>
+                    <input type="number" class="form-control" id="Amount">
+
+                </div>
+                <small id="check_Amount"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+
+                <div class="input-group">
+                    <div class="input-group-text">Address</div>
+                    <input type="text" class="form-control" id="Address">
+
+                </div>
+                <small id="check_address"></small>
+            </div>
+
+            <div class="col-sm-4 margin_bottom">
+
+                <div class="input-group">
+                    <div class="input-group-text">City</div>
+                    <input type="text" class="form-control" id="City">
+
+                </div>
+                <small id="check_City"></small>
+            </div>
+
+            <div class="col-sm-4 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text">District</div>
+                    <input type="text" class="form-control" id="District">
+
+                </div>
+                <small id="check_District"></small>
+            </div>
+
+            <div class="col-sm-4 margin_bottom">
+
+                <div class="input-group">
+                    <div class="input-group-text">PinCode</div>
+                    <input type="number" class="form-control" id="pin_code">
+
+                </div>
+                <small id="check_pin_code"></small>
+            </div>
+
+
+            <div class="col-sm-4 margin_bottom">
+
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="Male" value="option1">
+                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="Gender" id="Female" value="option2">
+                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                </div>
+
+                <small id="check_Gender"></small>
+
+            </div>
+
+
+
+            <div class="col-sm-4">
+
+                <div class="col-12 form-check form-switch">
+                    <input class="form-check-input" type="checkbox" value="" id="check" switch>
+                    <label class=" col-4 form-check-label" for="checkNativeSwitch">
+                        Check Form
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="col-sm-4 margin_bottom d-grid gap-2  mx-auto">
+
+                <button class="btn btn-outline-success" type="submit">Submit</button>
+            </div>
+
+            <div class="col-sm-4 margin_bottom d-grid gap-2 ">
+
+                <button class="btn btn-outline-success" type="reset">Reset</button>
+            </div>
+        </form>
+
+
+    </div>
+
+
+
+    <div class="container" style="margin-top:20px;">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+
+                <div class="Bank_card " id="card_id">
+                    <div class="card_header"><small class="card_header_2">Afghan Bank</small> <small
+                            class="card_header_1" id="card_Name">Credit Card</small>
+                    </div>
+                    <div class="imgs"><img src="/image/SM_card.jpg" alt="" class="img_1" width="10%"> <img
+                            src="/image/wifi.jpg" class="img_2" width="10%" alt=""></div>
+                    <div class="number"><small class="Num" id="one">3333</small> <small class="Num"
+                            id="two">4444</small> <small class="Num" id="three">5555</small> <small
+                            id="four">6666</small>
+                    </div>
+                    <div class="date"><small class="show" id="ex_date">2030/1/2</small></div>
+                    <div class="Name"><small class="show" id="Holder_Name"> Parveez AFGHAN</small></div>
+
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+
+
+
+    <div class="info_advice" id="info">
+        <h5 class="h5">keep This Record Secure</h5>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-lg-12 table-responsive ">
+                <table class="table  table-striped table-hover" id="table">
+
+                    <head id="head">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>F Name</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Account No</th>
+                            <th>Accout Type</th>
+                            <th>Balance</th>
+                            <th>Card Type</th>
+                            <th>Card No</th>
+                            <th>Card ex Date</th>
+                            <th>pin Code</th>
+
+                        </tr>
+                    </head>
+
+                    <body id="body">
+
+                        <tr>
+                            <td id="Fr_name">parveez</td>
+                            <td id="l_name">AFGHAN</td>
+
+                            <td id="FF_name">parveez</td>
+                            <td id="user_name">AFGHAN</td>
+                            <td id="user_pass">parveez</td>
+                            <td id="account_no">AFGHAN</td>
+                            <td id="account_T">parveez</td>
+                            <td id="Bala">AFGHAN</td>
+                            <td id="card_type">parveez</td>
+                            <td id="card_no">AFGHAN</td>
+                            <td id="ex_date_">parveez</td>
+                            <td id="pin_co">AFGHAN</td>
+
+                        </tr>
+
+                    </body>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="" style="display: flex;justify-content: center;margin-top:20px;"><button id="button"
+            onclick="print_card()" class="button btn btn-warning ">print</button>
+    </div>
+
+
+    <hr style="margin-top:50px">
+
+
+    <!-- body part 5 html -->
+
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-12"> <h4 class="Detials" >Employees Details</h4></div>
+        </div>
+    </div>
+
+
+
+    <!-- body part 6 html -->
+
+
+    
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-6">
+                <ul class="nav nav-tabs justify-content-around">
+                    <li class="nav-item">
+                        <a class="nav-link active color" aria-current="page" id="Find_Employee">Find Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Add_Employee_by_Manager">Add Employees</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Remove_Employee_by_Manager">Remove Employees</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Customer Table html -->
+
+
+
+
+    <!-- Empoyees table html  -->
+
+
+
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Amount_lists_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Router_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Common_Bank_Manager_Routers_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_js/Manager_Add_customer.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_logout_Router_js.js"></script>
+    <script >
+
+             let IDD=document.getElementById("user").dataset.id;
+        document.getElementById('Find_Account_Details').addEventListener('click',(e)=>{
+
+
+            e.preventDefault();
+
+            window.location.href=`/Bank_Manager?id=${IDD}`;
+        })
+
+         document.getElementById('Find_Account_Details_1').addEventListener('click',(e)=>{
+
+
+            e.preventDefault();
+
+            window.location.href=`/Bank_Manager?id=${IDD}`;
+        })
+
+        document.getElementById("Find_Employee").addEventListener("click",(e)=>{
+
+            e.preventDefault();
+
+            window.location.href=`/Bank_Manager?id=${IDD}`;
+
+        })
+    </script>
+
+
+ <script>
+        function print_card() {
+
+            window.print();
+        }
+    </script>
+</body>
+</html>

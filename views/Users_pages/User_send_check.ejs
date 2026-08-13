@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/user_Account_css/user_home_page_css.css">
+    <style>
+        .small{
+
+            margin-left:10px;
+            padding-top:30px;
+            font-family: roboto;
+            font-size:15px;
+        }
+        .p{
+
+            padding-top:4px;
+        }
+        .display{
+
+            display: none;
+        }
+        .show_card{
+
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+                    <!-- <li class="nav-item dropdown "><a  class="nav-link" id="Home">Home</a></li> -->
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="Home">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            status
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="user_Deposite">Deposite</a></li>
+                            <li><a class="dropdown-item" href="#" id="user_widthraw">Widthraw</a></li>
+                             <li><a class="dropdown-item" href="#" id="user_check">Chack</a></li>
+                             <li><a class="dropdown-item" href="#" id="user_transaction">Transactions</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="#" id="logout_1">Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                              
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li ><a class="dropdown-item" href="/Deposite_Manger.html">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="/Widthraw_Manager.html">Widthraw Balance</a></li> -->
+                             <li><a class="dropdown-item active" href="#" id="user_send_check">Give Chack </a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="#" id="logout_2">Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="user_contact">Contact Us</a>
+                    </li>
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+     <div class="container-fluid height">
+        <div class="row" style="padding-top:30px">
+            <div class="col-md-6"><h3 style="color: rgb(84, 80, 80);font-family: roboto;">Welcome parveez AFGHAN</h3></div>
+
+            <!-- <div class="col-sm-4"><h5 style="padding-left:150px;" href="#">Balance :120000</h5></div> -->
+            <div class="col-sm-6" ><a class="padding" style="font-family: roboto;" href="#" id="logout_3">Logout</a></div>
+
+
+        </div>
+    </div>
+
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <center>
+                    <h4 style="padding-top:50px;font-size:30px;font-weight: bold;">Transfer Chack</h4>
+                </center>
+            </div>
+        </div>
+    </div>
+
+    <div class="container margin_top">
+
+
+
+
+        <form class="row g-3" id="form_2">
+
+            <div class="col-12" style="margin-left:150px;">
+                <div class="row ">
+                    <div class="col-4"> <label for="inputEmail4" class="form-label">Account No </label>
+                        <input type="number" class="form-control" id="Account_Number">
+                        <small id="Account_Number_err"></small>
+                    </div>
+                
+
+                     <div class="col-4"> <label for="inputEmail4" class="form-label">Chack No.</label>
+                        <input type="number" class="form-control" id="check_id" id="check_Number">
+                        <small id="check_Number_err"></small>
+                    </div>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4"> <label for="inputEmail4" class="form-label">payee To</label>
+                        <input type="text" class="form-control" id="payee_To">
+                        <small id="payee_To_err"></small>
+                    </div>
+                    <div class="col-4"> <label for="inputEmail4" class="form-label">Expire Data</label>
+                        <input type="date" class="form-control" id="expire_date">
+                        <small id="expire_date_err"></small>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4"> <label for="inputEmail4" class="form-label">Expire Time</label>
+                        <input type="time" class="form-control" id="expire_time">
+                        <small id="expire_time_err"></small>
+                    </div>
+                    <!-- <div class="col-4"> <label for="inputEmail4" class="form-label">Payee Name</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                    </div> -->
+                    <div class="col-4"> <label for="inputEmail4" class="form-label">Amount</label>
+                        <input type="text" class="form-control" id="Amount">
+                        <small id="Amount_err"></small>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- <div class="col-4"> <label for="inputEmail4" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="inputEmail4">
+                    </div> -->
+                    <!-- <div class="col-4"> <label for="inputEmail4" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div> -->
+                </div>
+
+
+                 
+                <div class="row">
+                    <div class="col-8 form-check " style="margin-left:20px;margin-top:10px;">
+                     <input class="form-check-input" type="checkbox" value="" id="check_box" switch>
+                     <label class=" col-4 form-check-label" >
+                        Check Form
+                     </label>
+                    </div>
+                </div>
+
+
+                <div class="row" style="margin-top:10px;">
+
+                    <div class="col-sm-4 margin_bottom d-grid gap-2  ">
+           
+                        <button class="btn btn-outline-success" type="submit">Submit</button>
+                    </div>
+
+                    <div class="col-sm-4 margin_bottom d-grid gap-2  ">
+           
+                      <button class="btn btn-outline-warning" type="reset">Reset</button>
+                    </div>
+
+                    <!-- <div class="col-4"> <button  class="btn btn-outline-primary" >Submit</button></div>
+                    <div class="col-4"> <button   class="btn btn-outline-primary"  >Reset</button> </div> -->
+                </div>
+
+
+            </div>
+          
+        </form>
+       
+
+
+    </div>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 display" style="background: #fff;margin-bottom:50px;height:270px;border-radius:10px;" id="check_card">
+                <div class="p" style="border-bottom: 2px dashed red;border-top: 2px dashed rgb(63, 62, 62);margin-top:10px;line-height:50px;"><small >Afghan Bank</small></div>
+                <br>
+                <div class="p" style="margin-top:10px;"><small class="small" id="check_No_page">check No : </small> <small id="check_date_page">Date : </small></div>
+                <div class="p" ><small class="small" id="payee_To_page">pay To : </small></div>
+                <div class="p" ><small class="small" id="Amount_page">Amount : </small></div>
+                <div class="p" > <small class="small" id="Account_No_page">Account No : </small></div>
+                <div class="p" style="border-bottom:2px dashed black;line-height:30px;" > <small>Signature :_____________</small></div>
+
+            </div>
+            <div class="col-4"></div>
+        </div>
+    </div>
+
+    
+
+
+   <script src="/javascript/login_system_js/user_pages_Router_js/user_page_send_check_js.js"></script>
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/user_js.js/user_send_check_js.js"></script>
+</body>
+</html>

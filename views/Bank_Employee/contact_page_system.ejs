@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="/css/all.css">
+
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_contact_page_css.css">
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_change_password_css.css">
+
+
+    <style>
+
+         ul li a{
+
+            font-family: roboto;
+            font-weight: bold;
+        }
+
+        .password_box{
+
+            margin-top:30px;
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- Nav Bar html -->
+
+
+     <small id="user" data-id="<%= id%>"></small>
+     <nav class="navbar navbar-expand-lg bg-body-tertiary shadow HE nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" >Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link "  href="#"   id="Employee_Details">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Customer_list">Show Customer </a>
+                    </li>
+
+                      <!-- <li class="nav-item">
+                        <a class="nav-link" href="/Service_page_system.html">Services </a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                             <li><a class="dropdown-item" href="#" id="Widraw_Account">Change Password</a></li>
+                            <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                            <li><a href="#" class="dropdown-item" id="change_card_and_Account_status">change Card/Account Status</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_check_list">check List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Debit_list">Debit List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Credit_list">Credit List</a></li>
+                            <li><a class="dropdown-item" href="#"  id="show_Transfer_List">Transfer List</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" id="contact_us">Contact Us</a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="Status">Status</a>
+                    </li>
+                </ul> 
+
+                <h3 class="h2">AFGHAN Bank</h3>
+            </div>
+        </div>
+    </nav>
+
+
+
+    
+    <!-- Body part 1 html -->
+
+
+
+     <div class="password_box" id="dropdownMenu_1">
+        <div class="password">
+            <form id="password_form">
+                <input type="text" placeholder="Previous Password" id="Previous_Password" /><br /><br />
+                <small id="previous_erro"></small>
+
+                <input type="text" placeholder="New Password" id="new_password" /><br /><br />
+                <small id="new_password_error"></small> <br>
+                <button type="submit">chanage Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- End of password changin html -->
+
+    <div class="container-fluid height height_con" >
+        <div class="row">
+            <div class="col-md-6">
+
+                <h2 class="H2">Contact Us</h2>
+                <div class="Div"><a href="" class="A_padd">Home</a>    > <a href="" class="A_padd">Contact</a></div>
+                
+            </div>
+
+            <div class="col-md-6"><img src="/image/contact_3.jpg" class="img_width_height"   alt=""></div>
+        </div>
+    </div>
+
+
+    <!-- Body part 2 html -->
+
+
+
+    <div class="container-fluid b-color height__" style="padding-top:100px;" >
+        <div class="row" >
+            <div class="col-md-6"  >
+                <img src="/image/contact_4.jpg" class="img_" height="30%" alt="" style="margin-left:30%; "  >
+
+                <div class="row" style="margin-top:50px; margin-left:100px;">  
+
+                    <div class="col-md-4" > <div><img src="/image/headphone.jpg" class="Width_height"   alt=""></div> <div  class="display" ><a href="">call</a> <a href="">0773417792</a> <a href="">0773417792</a></div></div>
+                    <div class="col-md-4" > <div><img src="/image/Eamil.jpg" class="Width_height"   alt=""></div> <div  class="display" ><a href="">Eamil</a> <a href="">AFBank@gmail.com</a> <a href="">info@gmail.com</a></div></div>
+                    <div class="col-md-4"> <div><img src="/image/Feedback2.jpg" class="Width_height"   alt=""></div> <div  class="display" ><a href="">FeedBack</a> <a href="">FeedBack Form</a> <a href="">Report issue</a></div></div>
+
+                    
+
+
+                </div>
+            </div>
+            <div class="col-md-6 padding_top" style="padding-left:150px;">
+
+                <h1>Get in Touch</h1>
+
+                <form action="">
+
+                    <input type="text" placeholder="Enter Your Name" class="input input_"> <br>
+                    <input type="text" placeholder="Enter Your Number" class="input input_"> <br>
+                    <input type="text" placeholder="Enter Your Eamil" class="input input_"> <br>
+                    <!-- <textarea cols="50" rows="5" type="" placeholder="Enter Your Message" class="input input_" style="border: 1px solid red;"> </textarea> <br> -->
+
+                    <textarea class="Text_area" name="" id="" rows="5" cols="40" placeholder="Enter Your Message"  ></textarea>
+                    <button class="button" >Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Body part 3 html -->
+
+
+
+    <div class="container-fluid m-top">
+
+        <div class="row">
+            <div class="col-md-3" style="display:flex;flex-direction: column;margin-left:100px;">
+                <a class="pad" href="./Home.html"> > Home</a>
+                <a class="pad" href="./about.html"> > About</a>
+                <a class="pad" href="./contact.html"> > Contact us</a>
+                <a class="pad" href="./services.html"> > Services</a>
+            </div>
+            <div class="col-md-4">
+                <h4 class="pad M-left">Newsletter</h4>
+
+                <form action="" class="M-left">
+                    <input type="text" placeholder="Enter Your Eamil" class="Top_form " ><br>
+                    <button type="submit" class="Top_button ">Subscribe</button>
+                </form>
+            </div>
+            <div class="col-md-4" style="background: #fff;">
+
+                <h4 class="m-left h-top">Follow Us</h4>
+                <div class="m-left" style=><img src="/image/Youtube.jpg" alt="" class="" width="10%" height="" > <a href="">Youtube</a></div>
+                <div class="m-left"><img src="/image/instagram.jpg" alt="" class="" width="10%"> <a href="">instagram</a></div>
+                <div class="m-left"><img src="/image/whatsap.jpg" alt="" class="" width="10%"> <a href="">whatsap</a></div>
+                <div class="m-left"><img src="/image/linkdon.jpg" alt=""  class="" width="10%"> <a href="">Linkdone</a></div>
+            </div>
+        </div>
+    </div>
+
+
+
+     <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+     <script src="/javascript/login_system_js/Employee_pages_Router_js/Employee_contact_us_Router_js.js"></script>
+     <script src="/javascript/login_system_js/Employee_js/Employee_change_password_js.js"></script>
+
+</body>
+
+</html>

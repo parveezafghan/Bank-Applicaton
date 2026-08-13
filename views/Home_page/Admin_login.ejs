@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/css/admin_login_style_css.css">
+    <link rel="stylesheet" href="Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/all.css">
+
+
+      <style>
+ 
+
+</style>
+</head>
+<body>
+
+
+    <!-- Nav bar html -->
+
+
+    
+     <div class="navbar">
+
+        <div class="log">
+            AFGHAN Bank
+        </div>
+
+
+        <div class="menu-toggle" onclick="togglem()">
+            <i class="fa-solid fa-bars"> </i>
+        </div>
+
+
+        <div class="nav-links" id="nav-links">
+
+            <ul>
+
+                            <li><a href="/Home">Home</a></li>
+                            <li><a href="/about">About</a></li>
+                            <li><a href="/services">Services</a></li>
+                            <li><a href="/contact">contact us</a></li>
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/Admin_login">Admin</a></li>
+                
+                    
+            </ul>
+        </div>
+    </div>
+
+
+
+    <!-- Login part html -->
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6"> <img src="/image/Side_3_img.jpg"  class="img" alt=""></div>
+            <div class="col-lg-6">
+                
+            <div class="div-form" style="">
+                <form action="" id="form">
+                    <h3 style="padding-top: 10px;padding-left:50px;">Admin Login</h3>
+                    <div class="form_group" style="display: flex;flex-direction: column;">
+                    <label for="">User Name</label>
+                    <input class="input"  type="text" id="user_name">
+                    <small id="user_con" class="" ></small>
+                    </div>
+
+
+                    <div class="form_group" style="display: flex;flex-direction: column;">
+                    <label for="">Account password</label>
+                    <input class="input" type="text" id="Account_password">
+                    <small id="Account_con" class="" ></small>
+                    </div>
+                    
+                     <div class="pin_code form_group" style="display: flex;" >
+
+                        <input class="input-check" type="text" maxlength="1" placeholder="P1" id="pin_1"> <input class="input-check" type="text"  maxlength="1" placeholder="P2" id="pin_2">  <input class="input-check" type="text" maxlength="1" placeholder="P3" id="pin_3"> <input class="input-check" type="text" maxlength="1" placeholder="P4" id="pin_4" > <input class="input-check" maxlength="1" type="text" placeholder="P5" id="pin_5"> <br>
+                        
+                     </div>
+
+                      <small id="pin_con" class="" >sdff</small>
+
+                      <div class="form_group " style="display: flex;"> 
+                           <select class="select_"  name="" id="Role">
+                            <option value="" disabled selected>Role</option>
+                            <option value="manager">Manger</option>
+                            <option value="admin">Admin</option>
+                            <option value="Employee">Employee</option>
+                          </select>
+                          
+
+
+                          <select class="select_" name="" id="Branch">
+                            <option value="" disabled selected>Branch</option>  
+                          </select> 
+                       
+                           
+                           <!-- <div id="Role_check">Select the Role</div> -->
+                            
+                     </div>
+                     <small id="Role_check" class=""></small>
+                     <small id="Branch_check" class=""></small>
+                     
+                     <div class="form_group" style="display: flex;flex-direction: column;">
+                       <!-- <label for="">Are You Sure</label> -->
+                      <input class="check_" type="checkbox" id="chack" >
+                    </div>
+                    
+                    <div class="form_group" style="display: flex;flex-direction: column;">
+                     <button type="submit">Sing in</button>
+                    </div>
+
+                     <!-- <div class="form_group" style="display: flex;flex-direction: column;">
+                     <button type="submit">Sing in</button>
+                      <a href="" class="sing_a">Admin Login</a>
+                    </div> -->
+
+
+
+
+                  
+                                       
+                </form>
+
+                  
+                
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+         function togglem(){
+
+            var meanu=document.getElementById("nav-links");
+
+            if(meanu.style.display=='block'){
+
+                meanu.style.display='none';
+            }
+            else {
+
+                meanu.style.display='block'
+            }
+        }
+    </script>
+
+
+     <script src="/javascript/login_system_js/Admin_login_js.js"></script>
+    
+</body>
+</html>

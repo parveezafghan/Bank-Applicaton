@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css" />
+    <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_Transfer_funds_css.css">
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_change_password_css.css">
+</head>
+
+
+<style>
+
+     ul li a{
+
+            font-family: roboto;
+            font-weight: bold;
+        }
+
+
+        .password_box{
+
+            margin-top:10px;
+        }
+</style>
+
+<body>
+    <!-- Nav bar css and Boostrap -->
+
+      <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link "  href="#" id="Employee_Details">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Customer_list">Show Customer </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li><a class="dropdown-item" href="#">Change Password</a></li> -->
+                             <li><a class="dropdown-item" href="#" id="Widraw_Account">Change Password</a></li>
+                            <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                            <li><a href="#" class="dropdown-item" id="change_card_and_Account_status">change Card/Account Status</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_check_list">check List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Debit_list">Debit List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Credit_list">Credit List</a></li>
+                            
+                            <li><a class="dropdown-item" href="#"  id="show_Transfer_List">Transfer List</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" id="contact_us">Contact Us</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="Status">Status</a>
+                    </li>
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body part 1 html -->
+
+
+
+    <div class="password_box" id="dropdownMenu_1">
+        <div class="password">
+            <form id="password_form">
+                <input type="text" placeholder="Previous Password" id="Previous_Password" /><br /><br />
+                <small id="previous_erro"></small>
+
+                <input type="text" placeholder="New Password" id="new_password" /><br /><br />
+                <small id="new_password_error"></small> <br>
+                <button type="submit">chanage Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- End of password changin html -->
+
+    <div class="container-fluid my-1 height style" style="">
+        <div class="row">
+            <div class="col-sm-6 head" style="font-family: roboto;font-weight: bold;font-size:25px;">Welcome To Employee Dashboard</div>
+            <div class="col-6" style="display: flex; justify-content: end">
+                <a href="#" id="logout_1">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body part 2 html -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: center">
+                <h2>Account Details</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- body part3 html   -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs justify-content-around">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link  color" href="#" id="Employee_Details">Account Details</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Add_customer">Add Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Remove_customer">Remove Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Credit_Funds" aria-disabled="true">Credit Funds</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Debit_Funds" aria-disabled="true">Debit Funds</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active color" href="#" id="Transfer_funds" aria-disabled="true">Transfer Fund</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a  class="nav-link color" href="#" id="check_pay">pay check</a>
+                     </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body part4 html -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: center">
+                <h3>Transfer Funds</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+
+                <form class="row gy-2 gx-3 align-items-center" id="form">
+                  
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-text">From</div>
+                            <input type="text" class="form-control" id="From_account">
+                        </div>
+                        <small id="From_account_erro"></small>
+                    </div>
+
+                     <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                        <select class="form-select" id="card">
+                            <option selected disabled>Choose card...</option>
+                            <option value="Credit">Credit Card</option>
+                            <option value="Debit">Debit Card</option>
+                            <option value="ATM">ATM Card</option>
+                              <option value="visa">visa Card</option>
+                              <option value="Master">Master Card</option>
+                              <option value="Prepaid">Prepaid Card</option>
+                        </select>
+                        <small id="card_Error"></small>
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingInputGroup"></label>
+                        <div class="input-group">
+                            <div class="input-group-text">To</div>
+                            <input type="text" class="form-control" id="To_account" placeholder="">
+                        </div>
+                        <small id="To_account_erro"></small>
+                    </div>
+
+
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingInputGroup"></label>
+                        <div class="input-group">
+                            <!-- <div class="input-group-text">To</div> -->
+                            <input type="text" class="form-control" id="Amount" placeholder="Enter Amount">
+                        </div>
+                        <small id="Amount_erro"></small>
+                    </div>
+
+               
+
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-primary">Transfer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/Employee_pages_Router_js/Employee_Transper_funds_js.js"></script>
+    <script src="/javascript/login_system_js/Employee_js/Employee_Transfer_fund_js.js"></script>
+    <script src="/javascript/login_system_js/Employee_js/Employee_change_password_js.js"></script>
+</body>
+
+</html>

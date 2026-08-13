@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/Bank_Manager_css/Bank_Manager_customer_list_css.css">
+
+
+    <style>
+
+       /* body{
+        font-family: roboto;
+       } */
+         
+     .b{
+
+        margin-left:10px;
+        width:70px;
+     }
+
+       #dashboard{
+
+            font-size:30px;
+            font-family:roboto;
+            font-weight: bold;
+        }
+       
+        form , body{
+
+            font-family:roboto;
+        }
+
+        .none{
+
+            display: none;
+        }
+        .show{
+
+            display: block;
+        }
+
+        .lab{
+
+           margin-left:-265px;
+           margin-top:10px;
+           margin-bottom:10px;
+           font-family: Arial, Helvetica, sans-serif;
+           display: none;
+        }
+
+        input,select{
+
+            margin-top:20px;
+        }
+
+        .H{
+
+            height:40px;
+            margin-top:20px;
+        }
+
+        button:hover{
+
+            /* width:300px; */
+            /* transition: all 2s ease-in-out; */
+            /* transition: all 1.5s ease-in-out; */
+            transition: all 1.50s ease-in-out;
+
+          /* margin-top:100px; */
+           padding-left:50px;
+           /* padding:25px; */
+           /* margin-right:100px; */
+            margin-left:50px;
+            border-radius:20px;
+
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+    <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item">
+                        <a class="nav-link " href="#" id="Home">Home </a>
+                    </li>
+
+                     <li class="nav-item active">
+                        <a class="nav-link active" href="#" id="customer">Show Customer </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Employee">Show Employees </a>
+                    </li>
+                  
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            status
+                        </a>
+                        <ul class="dropdown-menu">
+
+                              <li><a class="dropdown-item" href="#" id="Deposite">Deposite List</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw List</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack List</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list">Transfer Amount List</a></li>
+                              <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                             <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                             <li><a href="" class="dropdown-item" id="Logout_1">logout</a></li>
+                             <!-- <li><a class="dropdown-item" href="#" id="Deposite">Deposite</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack</a></li> -->
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                         
+                        </ul>
+                    </li>
+
+                     <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Analytics</a> -->
+                         <a class="nav-link" href="#"  id="status">Analytics</a>
+                    </li>
+
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                               <li ><a class="dropdown-item" href="#" id="Amount_Deposite">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="#" id="Amount_widthraw">Widthraw Balance</a></li>
+                             <li><a class="dropdown-item" href="#" id="pay_check">Give Chack </a></li>
+                             <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                           
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact_us_Manager">Contact Us</a>
+                    </li>
+                  
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Body part 1 html -->
+
+
+     <div class="container height" style="background: #fefefe;">
+        <div class="row" style="padding-top:30px">
+            <div class="col-md-6"><h3 id="dashboard" >Welcome To Manager Dashboard</h3></div>
+            <div class="col-sm-5" >
+                <center><a class="padding"  href="#" id="Logout_2">Logout</a></center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+         <div class="col-3"><button class="btn btn-warning" onclick="show_Edit()">Edit Account</button></div>
+         <div class="col-3"><button class="btn btn-warning" ondblclick="show_customer_form()">Edit Customer </button></div>
+         <div class="col-3"><button class="btn btn-warning" onclick="show_card()">Edit Card</button></div>
+         <div class="col-3"><button class="btn btn-warning" onclick="show_login()" >Edit login Info</button></div>
+        </div>
+    </div>
+
+
+
+    
+    
+     
+    <div class="container-fluid none " style="margin-top:50px" id="add_class" >
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <form id="Edit_Account">
+
+
+                            <small style="font-family: roboto;font-weight: bold;font-size:20px;">Edit Account </small>
+                    <div class="col-md-6 pad-top">
+                        <label  class="lab">change Branch</label>
+                        <select class="form-select " id="Branch" id="Branch_id" id="one">
+                    <option value="" selected disabled>Select The Branch...</option>
+                   </select>
+                   <small id="check_Branch"></small>
+                    </div>
+                    
+                    <div class="col-md-6 pad-top">
+                        <label class="lab" for="">Update Amount</label>
+                        <input type="text" class="form-control" placeholder="Amount" id="Amount">
+                        <small id="check_Amount"></small>
+                    </div>
+
+
+                      <div class="col-md-6 pad-top">
+                        <label  class="lab"  >Change Account State</label>
+                        <select class="form-select" id="chanage_Account_state">
+                            <option selected disabled>Chanage Account State...</option>
+                            <option value="active">Active</option>
+                            <option value="block">Block</option>
+                            
+                        </select>
+                        <small id="chanage_Error"></small>
+                    </div>
+
+
+                    <div class="col-md-6 pad-top">
+                        <label class="lab">Chanage Account Type</label>
+                        <select class="form-select" id="chanage_Account_Type">
+                            <option selected disabled>Chanage Account Type...</option>
+                            <option value="saving">Saving</option>
+                           <option value="student">student</option>
+                           <option value="Fixed">Fixed</option>
+                            
+                        </select>
+                        <small id="check_Account_Type"></small>
+                    </div>
+
+
+
+                    <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Pay To ...." id="pay_To">
+                        <small id="pay_To_error"></small>
+                    </div> -->
+
+                     <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Account No ...." id="Account_Number">
+                        <small id="Account_Number_error"></small>
+                    </div>
+
+                     <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Amount ...." id="Amount">
+                        <small id="Amount_error"></small>
+                    </div> -->
+
+
+                     <!-- <div class="col-md-4 pad-top" style="margin-bottom:10px;">
+                       
+                        <select class="form-control" id="status">
+                            <option name="" id="">Select Status....</option>
+                            <option name="" id="">pending</option>
+                            <option name="cleared" id="">cleared</option>
+                            <option name="" id="">bounced</option>
+                            <option name="cancelled" id="">cancelled</option>
+                        </select>
+                        <small id="smal_status"></small>
+                    </div> -->
+
+                    <div class="col-md-4 pad-top" style="margin-bottom:10px;">
+                        <button class="btn btn-warning" style="width:200px;margin-top:20px;border-radius:10px;" type="submit">Edit Account</button>
+                    </div>
+
+                     
+
+                    
+                </form>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Edit customer  -->
+
+
+
+
+    <div class="container-fluid none " style="margin-top:50px" id="Add_customer" >
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <form id="Edit_customer">
+                    
+                        <!-- <h1>Edigt Customer</h1> -->
+                         <small style="font-family: roboto;font-weight: bold;font-size:20px;">Edit Customer Information </small>
+
+
+                          <div class="col-sm-6 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text H" s>First Name</div>
+                    <input type="text" class="form-control" id="First_Name">
+
+                </div>
+                <small id="check_First_Name"></small>
+            </div>
+
+
+            <div class="col-sm-6 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text H">Last Name</div>
+                    <input type="text" class="form-control" id="Last_Name">
+
+                </div>
+                <small id="check_Last_Name"></small>
+            </div>
+
+            <div class="col-sm-6 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text H">F Name</div>
+                    <input type="text" class="form-control" id="F_Name">
+
+                </div>
+                <small id="check_F_Name"></small>
+            </div>
+            <div class="col-sm-6 margin_bottom">
+                <div class="input-group">
+                    <div class="input-group-text H">Email</div>
+                    <input type="email" class="form-control" id="Email">
+                </div>
+                <small id="check_Email"></small>
+            </div>
+            <div class="col-sm-6 margin_bottom ">
+                <div class="input-group">
+                    <div class="input-group-text H">Mobile Number</div>
+                    <input type="text" class="form-control" id="Number">
+
+                </div>
+                <small id="check_Number"></small>
+            </div>
+            
+           
+                   
+
+                    <div class="col-md-4 pad-top" style="margin-bottom:10px;">
+                        <button class="btn btn-warning" style="width:200px;margin-top:20px;border-radius:10px;" type="submit">Edit Customer</button>
+                    </div>
+                </form>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid none " style="margin-top:50px" id="Edit_card" >
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <form id="Edit_card">
+                    
+                        <!-- <h1>Edigt card</h1> -->
+
+                        <small style="font-family: roboto;font-weight: bold;font-size:20px;">Edit Bank Card</small>
+
+                        <div class="col-md-6">
+                        <div class="input-group">
+                            <div class="input-group-text H">Card Number</div>
+                            <input type="text" value="1111 1111 1111 1111" class="form-control" id="card_Number">
+                        </div>
+                        <small id="card_erro"></small>
+                    </div>
+
+                     <div class="col-md-6">
+                        <!-- <label class="visually-hidden" for="autoSizingSelect">Preference</label> -->
+                        <select class="form-select" id="card_state">
+                            <option selected disabled>Change card status ...</option>
+                            <option value="expire">expire</option>
+                            <option value="block">Block</option>
+                            <option value="active">Active</option>
+                        </select>
+                        <small id="card_type_error"></small>
+                    </div>
+
+
+                    <div class="col-sm-6 margin_bottom">
+
+
+                <select class="form-select " id="card_type">
+                    <option value="" selected disabled>Select The Card...</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Prepaid">Prepaid</option>
+                    <option value="ATM">ATM</option>
+                </select>
+
+                <small id="check_card_err"></small>
+            </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-warning bt">Edit card</button>
+                    </div>
+
+
+
+                        
+
+                    <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Check No ...." id="check_Number">
+                        <small id="check_Number_error"></small>
+                    </div> -->
+
+                    <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Pay To ...." id="pay_To">
+                        <small id="pay_To_error"></small>
+                    </div> -->
+
+                     <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Account No ...." id="Account_Number">
+                        <small id="Account_Number_error"></small>
+                    </div> -->
+
+                     <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Amount ...." id="Amount">
+                        <small id="Amount_error"></small>
+                    </div> -->
+
+
+                     <!-- <div class="col-md-4 pad-top" style="margin-bottom:10px;">
+                       
+                        <select class="form-control" id="status">
+                            <option name="" id="">Select Status....</option>
+                             <option name="" id="">pending</option> -->
+                            <!-- <option name="cleared" id="">cleared</option> -->
+                            <!-- <option name="" id="">bounced</option> -->
+                            <!-- <option name="cancelled" id="">cancelled</option> -->
+                        <!-- </select> -->
+                        <!-- <small id="smal_status"></small> -->
+                    <!-- </div> --> 
+
+                    <!-- <div class="col-md-4 pad-top" style="margin-bottom:10px;">
+                        <button class="btn btn-warning" style="width:200px;margin-top:20px;border-radius:10px;" type="submit">pay Check</button>
+                    </div> -->
+
+                     
+
+                    
+                </form>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid none " style="margin-top:50px" id="Edit_login" >
+        <div class="row">
+            <div class="col-12">
+                <center>
+                    <form id="Edit_login">
+                        <small style="font-family: roboto;font-weight: bold;font-size:20px;">Edit Login Information </small>
+                   <div class="col-sm-6 margin_bottom" style="margin-bottom:10px;">
+
+                      <div class="input-group">
+                        <div class="input-group-text H">PinCode</div>
+                              <input type="number" class="form-control" id="pin_code">
+
+                        </div>
+                         <small id="check_pin_code"></small>
+                  </div>
+
+
+               <div class="col-md-6">
+                 <div class="input-group">
+                    <div class="input-group-text H">user Name</div>
+                    <input type="text" class="form-control" id="user_name">
+
+                  </div>
+                  <small id="user_name_err"></small>
+               </div>
+
+
+
+               <div class="col-md-6">
+                 <div class="input-group">
+                    <div class="input-group-text H">Password</div>
+                    <input type="text" class="form-control" id="password">
+
+                  </div>
+                  <small id="password_error"></small>
+               </div>
+
+
+                <div class="col-md-6 ad-top" style="margin-bottom:10px;">
+                        <button class="btn btn-warning" style="width:200px;margin-top:20px;border-radius:10px;" type="submit">Edit Login</button>
+                    </div>
+
+               </div>
+
+
+
+
+               
+             
+
+
+
+              
+               
+                    
+                        <!-- <h1>Edigt login</h1>
+                    <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Check No ...." id="check_Number">
+                        <small id="check_Number_error"></small>
+                    </div> -->
+
+                    <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Pay To ...." id="pay_To">
+                        <small id="pay_To_error"></small>
+                    </div> -->
+
+                     <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Account No ...." id="Account_Number">
+                        <small id="Account_Number_error"></small>
+                    </div> -->
+
+                     <!-- <div class="col-md-4 pad-top">
+                        <input type="text" class="form-control" placeholder="Amount ...." id="Amount">
+                        <small id="Amount_error"></small>
+                    </div> -->
+
+
+                     <!-- <div class="col-md-4 pad-top" style="margin-bottom:10px;"> -->
+                       
+                        <!-- <select class="form-control" id="status"> -->
+                            <!-- <option name="" id="">Select Status....</option> -->
+                            <!-- <option name="" id="">pending</option> -->
+                            <!-- <option name="cleared" id="">cleared</option> -->
+                            <!-- <option name="" id="">bounced</option> -->
+                            <!-- <option name="cancelled" id="">cancelled</option> -->
+                        <!-- </select> -->
+                        <!-- <small id="smal_status"></small> -->
+                    <!-- </div> -->
+
+                   
+                     
+
+                    
+                </form>
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+
+
+    <script>
+
+
+        let id=document.getElementById('user').dataset.id;
+
+        console.log(id.split('-'));
+
+         id=id.split('-');
+         let Account_Number=id[1];
+         id=id[0];
+
+        //  alert(Account_Number);
+
+
+         async function get_Customer(){
+
+
+            
+         let res=await fetch(`http://localhost:3000/Data_for_Edit_customer?Account_Number=`+Account_Number);
+
+
+         let Result=await res.json();
+
+         console.log(Result);
+         if(Result.success){
+
+            // alert('Sucess');
+
+            let result=Result.result;
+
+            document.getElementById('Amount').value=result[0].Balance;
+            document.getElementById('First_Name').value=result[0].Name;
+            document.getElementById("Last_Name").value=result[0].Last_Name;
+            document.getElementById('F_Name').value=result[0].Father_Name;
+            document.getElementById('Email').value=result[0].Eamil;
+             document.getElementById('Number').value=result[0].Mobile_number;
+             document.getElementById('pin_code').value=result[0].pin_code;
+             document.getElementById('user_name').value=result[0].user_name;
+             document.getElementById('password').value=result[0].password;
+             document.getElementById('card_Number').value=result[0].card_number;
+
+
+         }
+         else{
+
+            alert("Wronge");
+         }
+
+        
+
+
+         }
+
+         get_Customer();
+         
+         
+    </script>
+
+
+<script>
+
+     let Edit= document.getElementById('add_class');
+         let Add_customer=document.getElementById('Add_customer');
+          ///location.reload();
+        function show_Edit(){
+
+
+            // Add_customer.innerHTML="";
+
+            // location.reload();
+            // alert("in show Edit");
+        //   let Edit= document.getElementById('add_class');
+           
+        //    Add_customer.classList.add('none');
+          Edit.classList.toggle('show');
+
+
+        }
+
+
+        function show_customer_form(){
+
+            // alert("in Customer")
+            // Edit.innerHTML='';
+
+            // location.reload();
+
+
+            let Add_customer=document.getElementById('Add_customer');
+
+            Add_customer.classList.toggle('show');
+
+
+        }
+
+
+        let show_card=()=>{
+
+
+            let Edit_card=document.getElementById('Edit_card');
+
+            Edit_card.classList.toggle('show');
+        }
+
+        let show_login=()=>{
+
+            let Edit_login=document.getElementById('Edit_login');
+            Edit_login.classList.toggle("show");
+        }
+
+        
+</script>
+
+<script>
+
+    
+</script>
+
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/ToBar_Router_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Amount_lists_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Router_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_js/Edit_customer.js"></script>
+      <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_logout_Router_js.js"></script>
+</body>
+</html>

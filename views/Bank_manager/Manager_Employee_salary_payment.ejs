@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/Bootsrap/bootstrap.css"> -->
+     <link rel="stylesheet" href="/css/all.css" />
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/Bank_Manager_css/Bank_Manager_check_css.css">
+
+    <style>
+        body{
+
+             background: #efefef;
+            
+        }
+        .back{
+
+             background:#fff;
+             width:50%;
+             height:90vh;
+             margin-left: auto;
+             margin-right: auto;
+             margin-top:50px;
+             border-radius:10px;
+             box-shadow:4px 4px 4px rgb(239, 233, 223);
+        }
+        .err_width_{
+
+            /* height:100vh; */
+            height:700px;
+            margin-top:30px;
+
+               background:#fff;
+             /* width:50%; */
+             /* height:90vh; */
+             margin-left: auto;
+             margin-right: auto;
+             /* margin-top:50px; */
+             border-radius:10px;
+             box-shadow:4px 4px 4px rgb(239, 233, 223);
+        }
+        h2{
+
+            font-family: roboto;
+            font-weight: bold;
+            font-style: italic;
+            padding-top:10px;
+            padding-bottom:10px;
+        }
+        .font{
+
+            font-family: roboto;
+            font-weight: bold;
+            margin-top:20px;
+            margin-bottom:20px;
+        }
+        .font_{
+
+            margin-top:5px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width:767px){
+
+            .back{
+
+                height:650px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+
+
+
+
+    
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline" style="height:60px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Menu</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li> -->
+            <li class="nav-item">
+              <a class="nav-link " href="/Customers_list_Manager.html">Show Customer </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Employee_list_Manger.html"
+                >Show Employees
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Status
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item " href="/Deposite_Manager_List.html">Deposite</a></li>
+                <li><a class="dropdown-item" href="/widthraw_Manger_list.html">Widthraw</a></li>
+                <li><a class="dropdown-item active" href="/Chack_Manger.html">Chack</a></li>
+                 <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                <li><a class="dropdown-item" href="#">Change Password</a></li>
+                <li><a class="dropdown-item" href="#">Logout</a></li>
+                <!-- <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li> -->
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <!-- <a class="nav-link" href="#">Analytics</a> -->
+               <a class="nav-link" href="#"  id="status">Analytics</a>
+            </li>
+
+
+            
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li ><a class="dropdown-item" href="/Deposite_Manger.html">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="/Widthraw_Manager.html">Widthraw Balance</a></li>
+                             <li><a class="dropdown-item" href="/Chack_Manger.html">Give Chack </a></li>
+                             <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            </li>
+                        </ul>
+                    </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/Contact_us_Manger.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <h2 class="h2">AFGHAN Bank</h2>
+        </div>
+      </div>
+    </nav>
+
+
+    
+
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-6 back" id="err_width">
+                <center><h2>Online Salary Pay</h2></center>
+                <form id="form" >
+                    <div class="col-md-12 pad-top">
+                        <label for="" class="font">Card Number</label>
+                        <input type="text" class="form-control" id="Card" placeholder="....                   ....             ....                 ....             " id="check_Number">
+                        <small id="card_error"></small>
+                    </div>
+
+                   <div class="col-12">
+                    <div class="row">
+                          <div class="col-md-6 pad-top">
+                        <label for="" class="font">Expiration Date</label>
+                        <input type="date" class="form-control" id="Date" placeholder="....                   ....             ....                 ....             " id="check_Number">
+                        <small id="check_Date"></small>
+                    </div>
+
+                    <div class="col-md-6 pad-top">
+                        <label for="" class="font" >Name on card</label>
+                        <input type="text" id="Name" class="form-control" placeholder="....                   ....             ....                 ....             " id="check_Number">
+                        <small id="check_Name"></small>
+                    </div>
+                    </div>
+                   </div>
+
+
+                   <div class="col-md-12 mt-5" >
+
+
+
+                 <select class="form-select " id="Card_type">
+                    <option value="" selected disabled>Select The Card...</option>
+                    <option value="Debit">Debit</option>
+                    <option value="Credit">Credit</option>
+                    <option value="Prepaid">Prepaid</option>
+                    <option value="ATM">ATM</option>
+                 </select>
+
+                <small id="check_card_type"></small>
+                       
+                        <!-- <label for="Card Type"></label>
+                        <select class="form-control" id="status">
+                            <option name="" id="">Select card Type ..... </option>
+
+                            
+                        </select>
+                        <small id="smal_status"></small> -->
+                    </div>
+
+
+                    <div class=" col-md-12">
+                        <label for=""   class="font">Employee User Name </label>
+                        <input type="text" id="user_Name" class="form-control" >
+
+                        <small id="user_Name_err"></small>
+
+                    </div>
+
+
+                    <div class="col-md-12 mt-2" >
+                        <input type="checkbox" class="form-check-input" id="check" > <small class="font" id="policy">I have  Read and Agreed to The <strong>Terms and Conditions</strong> </small>
+                    </div>
+
+                    <div class="col-md-12 mt-2">
+                        <button class="btn btn-warning col-12">Pay</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+     document.getElementById('form').addEventListener('submit',(e)=>{
+
+
+        e.preventDefault();
+
+
+        let card_Number=document.getElementById("Card");
+        let Date=document.getElementById("Date");
+        let Name=document.getElementById("Name");
+        let Card_type=document.getElementById('Card_type');
+        let user_Name=document.getElementById('user_Name');
+        let check=document.getElementById('check');
+        let policy=document.getElementById("policy");
+
+        if(check.checked){
+
+            // alert("checked");
+             policy.classList.remove('text-danger');
+            check.classList.remove("is-invalid");
+
+
+            
+         let check_Card_Number=(card_Number)=>{
+
+            let check_card_Number=document.getElementById('card_error');
+
+
+         if(card_Number.value==='' || card_Number.value==='....                   ....             ....                 ....             '){
+
+
+            card_Number.classList.add("is-invalid");
+             check_card_Number.classList.add('text-danger');
+             check_card_Number.innerHTML="Fill The Input";
+         }
+
+         let Card_number_Array=card_Number.value.split(" ");
+         let First_card_number=Card_number_Array[0];
+         let Second_card_number=Card_number_Array[1];
+         let Third_card_number=Card_number_Array[2];
+         let Fourth_card_number=Card_number_Array[3];
+
+
+        //  let check_card_Number=document.getElementById('card_error');
+         console.log("Array Lenght:",Card_number_Array.length);
+
+
+         if(Card_number_Array.length<4 || Card_number_Array.length>4){
+
+             card_Number.classList.add("is-invalid");
+             check_card_Number.classList.add('text-danger');
+             check_card_Number.innerHTML="Follow Format 1111 1111  1111 1111 ";
+
+             return null;
+
+         }
+         else if(First_card_number.match(/[a-z]/g) || Second_card_number.match(/[a-z]/g) || Third_card_number.match(/[a-z]/g) || Fourth_card_number.match(/[a-z]/g)){
+
+
+             card_Number.classList.add('is-invalid');
+             check_card_Number.classList.add('text-danger');
+             check_card_Number.innerHTML="Only Digit and Valid Format";
+
+
+             return null;
+
+
+
+         }
+         else if(First_card_number.length>4||First_card_number.length<4 || Second_card_number.length>4 || Second_card_number.length<4 || Third_card_number.length<4||Third_card_number.length>4 || Fourth_card_number.length<4||Fourth_card_number.length>4){
+
+
+              card_Number.classList.add('is-invalid');
+              check_card_Number.classList.add('text-danger');
+              check_card_Number.innerHTML="in each Feild 4 digit valid";
+
+              return null;
+         }
+         else{
+
+            card_Number.classList.remove("is-invalid");
+            check_card_Number.classList.remove('text-danger');
+            check_card_Number.innerHTML="";
+
+            return card_Number;
+
+         }
+
+
+
+       }
+
+
+
+
+        
+       let check_Date=(Date)=>{
+
+       let check_Date=document.getElementById('check_Date');
+
+
+        if(Date.value==""){
+
+
+            Date.classList.add("is-invalid");
+            check_Date.classList.add("text-danger");
+            check_Date.innerHTML="Fill The Data";
+
+            return null;
+        }
+        else{
+
+
+            Date.classList.remove('is-invalid');
+            check_Date.classList.remove('text-danger');
+            check_Date.innerHTML="";
+
+            return Date;
+        }
+
+       }
+
+
+
+       let check_Name=(Name)=>{
+
+
+         let check_Name_=document.getElementById('check_Name');
+         if(Name.value===""){
+
+            Name.classList.add("is-invalid");
+            check_Name_.classList.add('text-danger');
+            check_Name_.innerHTML="Fill The Input";
+
+            return null;
+
+         }
+         else if(Name.value.match(/[0-9]/g)){
+
+
+            Name.classList.add("is-invalid");
+            check_Name_.classList.add('text-danger');
+            check_Name_.innerHTML="only Character";
+
+            return null;
+
+         }
+         else{
+
+            Name.classList.remove('is-invalid');
+            check_Name_.classList.remove('text-danger');
+            check_Name_.innerHTML="";
+
+            return Name.value;
+         }
+       }
+
+
+
+        let check_Card_type=(Card_type)=>{
+
+
+        let check_card_type_=document.getElementById("check_card_type");
+       
+
+        if(Card_type.value=="" || Card_type.value=='Select The Card...' || Card_type.value==null){
+
+            Card_type.classList.add("is-invalid");
+            check_card_type_.classList.add("text-danger");
+            check_card_type_.innerHTML="Select The Card";
+
+            return null;
+        }
+        else if(Card_type.value=="ATM"){
+
+            Card_type.classList.add("is-invalid");
+            check_card_type_.classList.add('text-danger');
+            check_card_type_.innerHTML="ATM Card Not Valid for Transaction";
+
+            return null;
+
+        }
+        else{
+
+            Card_type.classList.remove("is-invalid");
+            check_card_type_.classList.remove('text-danger');
+            check_card_type_.innerHTML="";
+
+            return Card.value;
+        }
+         
+
+
+
+       }
+
+
+
+       let check_User_Name=(user_Name)=>{
+
+        alert("in")
+
+        let user_Name_err=document.getElementById("user_Name_err");
+
+        if(user_Name.value===""){
+
+
+            user_Name.classList.add("is-invalid");
+            user_Name_err.classList.add("text-danger");
+            user_Name_err.innerHTML="Fill The Input";
+
+            return null;
+
+        }
+        else if(user_Name.value.match(/[0-9]/g)){
+
+
+            user_Name.classList.add("is-invalid");
+            user_Name_err.classList.add("text-danger");
+            user_Name_err.innerHTML="only Character";
+
+            return null;
+        }
+        else{
+
+
+            user_Name.classList.remove("is-invalid");
+            user_Name_err.classList.remove("text-danger");
+            user_Name_err.innerHTML="";
+
+            return user_Name.value;
+        }
+       }
+
+
+
+       card_Number=check_Card_Number(card_Number);
+       Date=check_Date(Date);
+       Name=check_Name(Name);
+       Card_type=check_Card_type(Card_type);
+       user_Name=check_User_Name(user_Name);
+       alert(user_Name);
+
+
+       if(card_Number===null || Date==null || Name==null || Card_type==null || user_Name===null){
+
+             let err_width_=document.getElementById('err_width');
+             console.log(err_width_);
+             err_width_.classList.add('err_width_');
+             let label_=document.getElementsByTagName('label');
+             console.log(label_)
+             label_.classList.add('font_');
+
+            alert("Fill The Form");
+       }
+        }
+        else{
+
+            
+            policy.classList.add('text-danger');
+            check.classList.add("is-invalid");
+            alert("check The Terms and Condition policy");
+        }
+        // let  check_card_Number=document.getElementById("card_error");
+
+
+
+
+     })
+
+    </script>
+
+
+
+<script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+      <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_logout_Router_js.js"></script>
+</body>
+
+
+</html>

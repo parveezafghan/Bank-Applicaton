@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+    <link rel="stylesheet" href="/css/Bank_Manager_css/Bank_Manager_widthraw_css.css">
+
+
+    <style>
+
+         form , body{
+
+            font-family:roboto;
+        }
+
+        .fb{
+            border-radius:15px;
+        }
+    </style>
+    
+
+</head>
+<body>
+
+
+
+    
+    <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    
+
+
+                     <li class="nav-item">
+                        <a class="nav-link " href="#" id="Home">Home </a>
+                    </li>
+
+                     <li class="nav-item ">
+                        <a class="nav-link " href="#" id="customer">Show Customer </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Employee">Show Employees </a>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            status
+                        </a>
+                        <ul class="dropdown-menu">
+
+                              <li><a class="dropdown-item" href="#" id="Deposite">Deposite List</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw List</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack List</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list">Transfer Amount List</a></li>
+                              <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                             <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                             <li><a href="" class="dropdown-item" id="Logout_1">logout</a></li>
+                            <!-- <li><a class="dropdown-item" href="#" id="Deposite">Deposite</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack</a></li> -->
+                          
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+
+                     <li class="nav-item">
+                        <!-- <a class="nav-link" href="#">Analytics</a> -->
+                         <a class="nav-link" href="#"  id="status">Analytics</a>
+                    </li>
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li ><a class="dropdown-item" href="#" id="Amount_Deposite">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="#" id="Amount_widthraw">Widthraw Balance</a></li>
+                             <li><a class="dropdown-item" href="#" id="pay_check">Give Chack </a></li>
+                             <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                         
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                           
+                        </ul>
+                    </li>
+
+                    
+                     <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact_us_Manager">Contact Us</a>
+                    </li>
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Body part 1 html -->
+
+  
+      <div class="container height" style="background: #fefefe;">
+        <div class="row" style="padding-top:30px">
+            <div class="col-md-6"><h3 id="dashboard" >Welcome To Manager Dashboard</h3></div>
+            <div class="col-sm-5" >
+                <center><a class="padding"  href="#" id="Logout_2">Logout</a></center>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <!-- Body part 2 html -->
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12"> <h4 class="Detials" >Widthraw Balance</h4></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- body part 3 html -->
+
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-6">
+                <ul class="nav nav-tabs justify-content-around">
+                  
+                    <li class="nav-item">
+                        <a class="nav-link  color" aria-current="page" href="#" id="Find_Account_Details">Account Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Transfer_Mony_Manager">Transfer</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div>
+
+                <form class="row gy-2 gx-3 align-items-center" id="form">
+                    <div class="col-auto">
+                        <div class="input-group">
+                            <div class="input-group-text">Account No.</div>
+                            <input type="text" class="form-control" id="Account_Number" placeholder="">
+                        </div>
+                        <small id="Account_Number_Error"></small>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingInputGroup"></label>
+                        <div class="input-group">
+                            <div class="input-group-text">Account(Rs.)</div>
+                            <input type="text" class="form-control" id="Amount" placeholder="">
+                        </div>
+                        <small id="Amount_Error"></small>
+                    </div>
+
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                        <select class="form-select" id="card">
+                            <option selected disabled>Choose card...</option>
+                            <option value="credit">Credit Card</option>
+                            <option value="Debit">Debit Card</option>
+                            <option value="ATM">ATM Card</option>
+                              <option value="visa">visa Card</option>
+                              <option value="Prepaid">Prepaid</option>
+                              <option value="Master">Master Card</option>
+                        </select>
+                        <small id="card_Error"></small>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-warning" style="width:160px;font-family: roboto;">Widthraw Amount</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+         let __id=document.getElementById("user").dataset.id;
+
+        document.getElementById('Find_Account_Details').addEventListener('click',(e)=>{
+
+
+            e.preventDefault();
+
+            window.location.href=`/Bank_Manager?id=${__id}`;
+        })
+
+
+        document.getElementById('Transfer_Mony_Manager').addEventListener('click',(e)=>{
+
+
+    e.preventDefault();
+
+    window.location.href=`/Transfer_Mony_Manager?id=${__id}`;
+})
+    </script>
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/ToBar_Router_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Amount_lists_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Router_js.js"></script>
+    <script src="/javascript/login_system_js/Manager_js/Widthraw_Amount_js.js"></script>
+      <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_logout_Router_js.js"></script>
+</body>
+</html>

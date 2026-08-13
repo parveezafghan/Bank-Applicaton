@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/all.css" />
+  <link rel="stylesheet" href="/Bootsrap/bootstrap.css" />
+  <link rel="stylesheet" href="/css/Bank_Manager_css/Bank_Manager_Deposite_list_css.css">
+     <script src="/chart js/chart.umd.js"></script>
+  <style>
+
+
+ body{
+
+            /* border: 5px solid red; */
+            /* margin-right:-1500px; */
+            padding:0;
+            /* width:100%; */
+            background: #efefee;;
+        }
+        button{
+
+            margin-left:10px;
+        }
+
+        ul li a{
+
+            font-family: roboto;
+            font-weight: bold;
+        }
+
+        .no{
+
+            display:none;
+        }
+
+        .password_box{
+
+            margin-top:20px;
+        }
+        .b{
+
+            width:60px;
+        }
+
+
+        form , body{
+
+            font-family:roboto;
+        }
+
+        .fb{
+            border-radius:15px;
+        }
+
+
+        .barchart{
+
+            width: 600px;
+            height:600px;
+        }
+
+        .ra{
+
+            border-radius: 10px;
+            /* width:500px; */
+            /* border:2px solid reds; */
+            width:300px;
+            height:200px;
+            display: flex;
+            background:white;margin-left:10px;
+          
+            margin-left:100px;
+            margin-top:20px;
+            /* justify-content: space-between; */
+            
+        }
+
+        .one{
+             box-shadow: 2px 2px 4px rgb(226, 215, 195);
+             /* border:30px; */
+        }
+       
+
+        #one:hover{
+            transition: all 0.5s ease-in-out;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px rgb(147, 147, 120);
+            
+        }
+
+        .img{
+
+          width:50%;
+          margin-left:10%;
+          margin-top:30px;
+
+        }
+        small{
+
+          font-size:15px;
+          font-weight: bold;
+          font-family: roboto;
+          width:50%;
+          padding-top:20px;
+          
+        }
+
+        .box{
+
+          width:300px;
+          padding-top:40px;
+          /* margin-left:50px; */
+        }
+        .margin_Top{
+
+          margin-top:30px;
+        }
+
+
+    
+
+        @media (max-width:900px){
+
+          #Block{
+
+            display: block;
+          }
+
+          .width{
+
+            width:500px;
+          }
+        }
+
+        .main{
+
+          display: flex;
+        }
+
+        .img_{
+
+          margin-left:20px;
+          margin-top:40px;
+          width:50%;
+        }
+
+        .sm{
+
+          /* margin-top:100px; */
+          padding-top:30px;
+          margin-left:10px;
+          /* border: 1px solid red; */
+        }
+  </style>
+</head>
+
+<body>
+
+  <small id="user" data-id="<%= id%>"></small>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link " id="Home">Home </a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a class="nav-link " href="#" id="customer">Show Customer </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="Employee">Show Employees </a>
+          </li>
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Status
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" id="Deposite">Deposite List</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw List</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack List</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list">Transfer Amount List</a></li>
+                              <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                             <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                             <li><a href="" class="dropdown-item" id="Logout_1"></a></li>
+              <!-- <li><a class="dropdown-item active" href="#" id="Deposite">Deposite</a></li>
+              <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw</a></li>
+              <li><a class="dropdown-item" href="#" id="check_list">Chack</a></li> -->
+             
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+             
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Analytics</a> -->
+             <a class="nav-link" href="#"  id="status">Analytics</a>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Transfer
+            </a>
+            <ul class="dropdown-menu">
+
+              <li><a class="dropdown-item" href="#" id="Amount_Deposite">Deposite Balance</a></li>
+              <li><a class="dropdown-item" href="#" id="Amount_widthraw">Widthraw Balance</a></li>
+              <li><a class="dropdown-item" href="#" id="pay_check">Give Chack </a></li>
+              <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+              <li><a class="dropdown-item" href="#">Change Password</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="contact_us_Manager">Contact Us</a>
+          </li>
+        </ul>
+
+        <h2 class="h2">AFGHAN Bank</h2>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Body part 1 html -->
+
+
+  <div class="container-fluid margin_Top">
+    <div class="row">
+         
+         <div class="col-md-3 ra one" id="one">
+
+              <div class="box"> <small  >Total Balance </small> <br> 
+                <small  id="balance">1000</small> </div>
+                <div ><img class="img" src="/Money_image.jpg"  alt=""></div>
+         </div>
+
+
+         <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+
+              <div class="box" >
+                 <small  >Total Widthraw </small> <br>
+                 <small  id="Widthraw_">1000</small> 
+              </div>
+              <div ><img  class="img" src="/image/Widthraw_3.jpg" width="80%" alt=""></div>
+
+         </div>
+
+
+         <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+
+
+            <div class="box" >
+               <small  >Total Deposite </small>  <br>
+                <small  id="Deposite_"></small> </div>
+            <div ><img class="img"  src="/image/Deposite_3.jpg" width="80%" alt=""></div>
+
+         </div>
+
+
+
+         
+
+       
+        
+        
+      
+    </div>
+  </div>
+
+
+
+
+  <div class="container-fluid margin_Top" >
+
+    <div class="row">
+      <div class="col-md-3 ra " class="col-md-3 ra one" id="one">
+
+        <div class="main" >
+          <div class="sm"> <small>Total check </small>  <br><small  id="check">1000</small> </div> 
+           <div><img  src="/image/check.jpg" width="80%"  alt="" ></div>
+        </div>
+
+      </div>
+
+      <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+
+        <div class="main">
+           <div class="sm"> <small  >Total Account </small> <br> <small id="Account">3000</small>   </div>
+
+            <div ><img  style="margin-top:15px;width:50%;margin-left:30px;" src="/image/Account.jpg" width="30%" alt=""></div>
+        </div>
+           
+      </div>
+
+      <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+
+        <div class="main" >
+          <div class="sm"> <small  >Total Card </small> <br>  <small  id="card">1000</small> </div> 
+            <div><img  src="/image/card.jpg"  style="width:50%;margin-top:15px;margin-left:30px;"  alt=""></div>
+        </div>
+
+        
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container-fluid margin_Top">
+
+    <div class="row">
+      <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+        <div class="main">
+
+          <div class="sm">  <small  >Total Transfer Amount </small> <br>  <small id="Transfer">1000</small> </div>
+             <div class="img_" ><img  src="/image/Transation.jpg" width="80%"  alt=""></div>
+             </div> 
+
+        </div>
+
+
+
+        <div class="col-md-3 ra" class="col-md-3 ra one" id="one">
+        <div class="main">
+           <div class="sm">   <small   >Employees</small> <br> <small   id="Emp">1000</small> </div>
+
+            <div class="img_" ><img  src="/image/Network_img.jpg" width="150px" ></div>
+
+        </div>
+      </div>
+      </div>
+
+
+      
+
+    </div>
+  </div>
+<!-- 
+  <div class="container">
+        <div class="row">
+           <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;" class="col-6"> <small style="font-size:1tpx;font-weight:bold;" >Total Balance </small> <br> <small style="font-size: 15px;font-weight: bold;" id="balance">1000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/Money_image.jpg" width="80%" alt=""></div>
+             </div>
+           </div>
+            <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;" class="col-6"> <small style="font-size:13px;font-weight:bold;" >Total Widthraw </small> <br><small style="font-size: 15px;font-weight: bold;" id="Widthraw_">1000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/image/Widthraw_3.jpg" width="80%" alt=""></div>
+             </div>
+           </div>
+            <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;" class="col-6"> <small style="font-size:1tpx;font-weight:bold;" >Total Deposite </small>  <br> <small style="font-size: 15px;font-weight: bold;" id="Deposite">1000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/image/Deposite_3.jpg" width="80%" alt=""></div>
+             </div>
+           </div>
+
+
+
+           
+
+           <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;display: flex;flex-direction: column;" class="col-6"> <small style="font-size:1tpx;font-weight:bold;" >Total check </small>  <br><small style="font-size: 15px;font-weight: bold;" id="check">1000</small> </div>
+                <div class="col-6" ><img style="margin-left:-50px;" src="/image/check.jpg" width="150px"  alt="" height="160px"></div>
+             </div>
+           </div>
+
+           <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;" class="col-6"> <small style="font-size:1tpx;font-weight:bold;" >Total Account </small> <br> <small style="font-size: 15px;font-weight: bold;" id="Account">3000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/image/Account.jpg" width="80%" alt=""></div>
+             </div>
+           </div>
+
+           <div class="col-md-4"  style="margin-top:100px;">
+
+             <div class="row ra" id="one" >
+                <div style="margin-top:30px;display:flex;flex-direction: column;" class="col-6"> <small style="font-size:1tpx;font-weight:bold;" >Total Card </small> <br>  <small style="font-size: 15px;font-weight: bold;" id="card">1000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/image/card.jpg" width="80%" alt=""></div>
+             </div>
+           </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="container " style="margin-top:100px;">
+      <div class="row">
+          <div class="col-md-4 "  >
+
+             <div class="row ra second " id="one"  >
+                <div style="margin-top:30px;" class="col-md-6"> <small style="font-size:1tpx;font-weight:bold;" >Total Transfer Amount </small> <br>  <small style="font-size: 15px;font-weight: bold;" id="Transfer">1000</small> </div>
+                <div class="col-6"><img style="margin-top:10px;" src="/image/Transation.jpg" width="80%" height="100px" alt=""></div>
+             </div>
+           </div>
+
+
+           
+           <div class="row ra" id="one" >
+                <div style="margin-top:30px;display: flex;flex-direction: column;" class="col-md-6"> <small style="font-size:1tpx;font-weight:bold;"  >Employees</small> <br> <small style="font-size: 15px;font-weight: bold;" id="Emp">1000</small> </div>
+                <div class="col-6" ><img style="margin-left:-50px;" src="/image/Network_img.jpg" width="150px"  alt="" height="160px"></div>
+             </div>
+           </div>
+      </div>
+    </div> -->
+
+    <div class="container-fluid" style="margin-top:100px;">
+        <div class="row" id="Block">
+            <div class="col-md-6">
+                 <div class="barchart" style="width:300px;height:300px;">
+                  <canvas id="barChart" ></canvas>
+                 </div>
+            </div>
+
+            <div class="col-md-6 ">
+                <div class="barchart width" >
+                   <canvas id="barChart2" ></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+  <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+  <script src="/javascript/login_system_js/Manager_page_Router_js/ToBar_Router_js.js"></script>
+  <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Amount_lists_js.js"></script>
+  <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_Transfer_Router_js.js"></script>
+  <!-- <script src="/javascript/login_system_js/Employee_js/Employee_Debit_list_js.js"></script> -->
+   <script src="/javascript/login_system_js/Employee_js/Employee_Bank_status_data.js"></script>
+<script src="/javascript/login_system_js/Employee_js/Employee_status.js"></script>
+  <script src="/javascript/login_system_js/Manager_page_Router_js/Manager_logout_Router_js.js"></script>
+
+</body>
+
+</html>

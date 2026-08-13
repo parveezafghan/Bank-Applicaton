@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/css/all.css">
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+
+    <style>
+        
+    body{
+
+      
+        width:100%;
+        height:100%;
+         background: #efefef;
+    }
+    .main_container_css{
+
+        width:70%;
+        height:100%;
+        margin-left: auto;
+        margin-right: auto;  
+        margin-top:50px;
+        border-radius:10px;
+         background:#fff; 
+    }
+    .Title_div{
+        text-align: center;
+        padding-top:15px;
+    }
+
+    .title{
+
+        font-family: roboto;
+        font-weight: bold;
+    }
+
+    .form_div{
+
+        display: flex;
+        justify-content: center;
+        margin-top:50px;
+    }
+
+    form{
+
+        width:80%;
+    }
+    input{
+
+        height:30px;
+        width:40%;
+        outline: none;
+        /* border-radius:5px; */
+        /* border: none; */
+        /* border:2px solid blacks; */
+    }
+    select{
+        width:20%;
+        height:38px;
+        border-radius:5px;
+        outline: none;
+
+    }
+    input:hover{
+
+        transition:all 1s ease-in-out;
+        /* border:3px solid rgb(110, 199, 234); */
+    }
+
+    .btn{
+
+        width:150px;
+        height:40px;
+          /* background:rgb(171, 230, 171); */
+          background: linear-gradient(rgb(66, 163, 66),rgb(211, 211, 78) );
+        border: none;
+        border-radius:10px;
+    }
+
+    .btn:hover{
+
+        transition:all 1s ease-in-out;
+        width:160px;
+        height:45px;
+        /* background:rgb(191, 222, 191); */
+        background: linear-gradient(rgb(66, 163, 66),rgb(211, 211, 78) );
+        
+    }
+
+    .table_div{
+
+        /* margin-left: auto;
+        margin-right: auto; */
+
+        display: flex;
+        justify-content: center;
+        margin-top:40px;
+    }
+
+    table{
+
+        width:90%;
+        border:10px;
+          /* background:rgb(171, 230, 171); */
+        border-bottom:1px solid black;
+        border-right:1px solid black;
+        border-left:1px solid black;
+        /* border:1px solid black; */
+    }
+    tr{
+
+        /* border-bottom:2px solid black; */
+        border:1px solid black;
+    }
+    th,td{
+
+        border-spacing:100px;
+        margin-top:0;
+        height:50px;
+        
+        /* width:100%; */
+
+        border-bottom:1px solid black;
+    }
+    th{
+
+        font-family: roboto;
+         /* background:rgb(171, 230, 171); */
+         background: linear-gradient(rgb(171, 225, 171),rgb(186, 186, 133) );
+        /* padding-left:10%; */
+        /* border: 1px; */
+    }
+    .second{
+        padding-left:25%;
+        font-family: roboto;
+        /* border: 1px solid red; */
+    }
+
+    .first{
+
+        padding-left:5%;
+        font-family: roboto;
+        
+    }
+    .third{
+
+        padding-left:5%;
+        font-family: roboto;
+    }
+    .take_Attendence{
+
+        margin-left:35px;
+        margin-top:10px;
+        margin-bottom:30px;
+    }
+
+    .Attendence_button{
+
+        width:200px;
+        height:50px;
+        /* background:rgb(171, 230, 171); */
+        background: linear-gradient(rgb(66, 163, 66),rgb(211, 211, 78) );
+        outline: none;
+        border: none;
+        border-radius:10px;
+        font-family:roboto;
+
+    }
+    .err{
+        border:2px solid red;
+        border-radius:10px;
+    }
+    .text_err{
+
+        color:red;
+
+    }
+    </style>
+</head>
+<body>
+
+
+
+
+    
+  <small id="user" data-id="<%= id%>"></small>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Menu</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link " id="Home">Home </a>
+          </li>
+
+
+          <li class="nav-item ">
+            <a class="nav-link " href="#" id="customer">Show Customer </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="Employee">Show Employees </a>
+          </li>
+          <li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Status
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" id="Deposite">Deposite List</a></li>
+                            <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw List</a></li>
+                             <li><a class="dropdown-item" href="#" id="check_list">Chack List</a></li>
+                             <li><a class="dropdown-item" href="#" id="Transfer_Fund_list">Transfer Amount List</a></li>
+                              <li><a href="#" class="dropdown-item" id="attendence">Take Attendence</a></li>
+                             <li><a href="#" class="dropdown-item" id="Employee_salary_payment">Employee Salary Pay</a></li>
+                             <li><a href="" class="dropdown-item" id="Logout_2">logout</a></li>
+              <!-- <li><a class="dropdown-item active" href="#" id="Deposite">Deposite</a></li>
+              <li><a class="dropdown-item" href="#" id="Widthraw">Widthraw</a></li>
+              <li><a class="dropdown-item" href="#" id="check_list">Chack</a></li> -->
+             
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+             
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <!-- <a class="nav-link" href="#">Analytics</a> -->
+             <a class="nav-link" href="#"  id="status">Analytics</a>
+          </li>
+
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Transfer
+            </a>
+            <ul class="dropdown-menu">
+
+              <li><a class="dropdown-item" href="#" id="Amount_Deposite">Deposite Balance</a></li>
+              <li><a class="dropdown-item" href="#" id="Amount_widthraw">Widthraw Balance</a></li>
+              <li><a class="dropdown-item" href="#" id="pay_check">Give Chack </a></li>
+              <li><a class="dropdown-item" href="#" id="change_card_And_Account_Status">change card & Account State</a></li>
+              <li><a class="dropdown-item" href="#">Change Password</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="contact_us_Manager">Contact Us</a>
+          </li>
+        </ul>
+
+        <h2 class="h2">AFGHAN Bank</h2>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+    <div class="main_container_css">
+
+        <div class="Title_div"><h3 class="title">Employee Attendence Management system</h3></div>
+
+
+        <div class="form_div">
+            <form id="Employee_Attendence">
+                <input type="text" placeholder="Enter Employee user Name" id="user_Name">
+                
+                <select  id="Attendence_type" style="height:32px;">
+                    <option disabled selected>Select options</option>
+                    <option value="Present">Present</option>
+                    <option value="absent">Absent</option>
+                    <option value="holy day">Holy Day</option>
+                </select>
+                <button class="btn" type="submit">Take Attendence</button>
+            </form>
+
+            <br>
+           
+        </div>
+
+       <center>  <small id="Attendenc_Error"></small>   </center>
+       <center><small id="Attendence_type_err"></small></center>
+
+        <div class="table_div">
+            <table >
+
+                <thead>
+                    <tr>
+                        <th style="padding-left:30px;">NO</th>
+                        <th style="padding-left:200px;">Employee Name</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                     <!-- <tr>
+                        <td class="first" id="No">1</td>
+                        <td class="second" id="Name">parveez Afghan</td>
+                        <td class="third" > <input value="1" class="attend" id="check" type="checkbox"> </td>
+                    </tr>
+
+                    <tr>
+                        <td class="first">1</td>
+                        <td class="second">parveez Afghan</td>
+                        <td class="third " > <input value="2" class="attend" type="checkbox"> </td>
+                    </tr>
+
+                    <tr>
+                        <td class="first">1</td>
+                        <td class="second">parveez Afghan</td>
+                        <td class="third" > <input value="3" class="attend" type="checkbox"> </td>
+                    </tr> -->
+
+                  
+                   
+                </tbody>
+            </table>            
+        </div>
+
+        <div class="take_Attendence">
+                <button class="Attendence_button" onclick="submitAttendence()">Take Attendence</button>
+            </div>
+    </div>
+
+
+    <script>
+
+
+    </script>
+
+
+<script src="/javascript/login_system_js/Manager_js/Attendence_js.js"></script>
+    
+</body>
+</html>

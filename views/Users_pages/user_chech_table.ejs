@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css">
+
+    <link rel="stylesheet" href="/css/user_Account_css/user_home_page_css.css">
+
+    <style>
+
+      body{
+
+        margin: 0;
+        padding:0;
+        /* border: 1px solid red; */
+        margin-right:0;
+        width:100%;
+      }
+    </style>
+</head>
+<body>
+ 
+
+      <small id="user" data-id="<%= id%>"></small>
+     
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                   
+                    <li class="nav-item dropdown">
+
+                      <li class="nav-item">
+                        <a class="nav-link" href="#" id="Home">Home</a>
+                    </li>
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            status
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item " href="#" id="user_Deposite">Deposite</a></li>
+                            <li><a class="dropdown-item " href="#" id="user_widthraw">Widthraw</a></li>
+                             <li><a class="dropdown-item active" href="#" id="user_check">Chack</a></li>
+                               <li><a class="dropdown-item " href="#" id="user_transaction">Transactions</a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item logout" href="#"  id="log"  >Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                              
+                            </li>
+                        </ul>
+                    </li>
+
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Transfer
+                        </a>
+                        <ul class="dropdown-menu">
+                            <!-- <li ><a class="dropdown-item" href="/Deposite_Manger.html">Deposite Balance</a></li>
+                            <li><a class="dropdown-item" href="/Widthraw_Manager.html">Widthraw Balance</a></li> -->
+                             <li><a class="dropdown-item" href="#" id="user_send_check">Give Chack </a></li>
+                            <li><a class="dropdown-item" href="#">Change Password</a></li>
+                            <li><a class="dropdown-item logout" href="#" id="log_" >Logout</a></li>
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="user_contact">Contact Us</a>
+                    </li>
+                </ul>
+            
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+
+
+    
+    <div class="container-fluid" >
+      <div class="row">
+        <div class="col-md-12" style="margin-top:100px;">
+          <center><h2 class="">Chack List</h2>
+          <button style="margin-left: 10px" class="btn btn-outline-info">
+            Print
+          </button ></center>
+        </div>
+      </div>
+    </div>
+
+
+     <div class="container">
+      <div class="row">
+        <div class="col-12" style="margin-top:10px;">  <center> <button   onclick="show(15)" class="btn btn-warning b">15</button> <button onclick="show(30)" class="btn btn-warning b">30</button> <button onclick="show(true)"  class="btn btn-warning b">all</button> </center> </div>
+      </div>
+    </div>
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div>
+                    <form  id="form_1"  style="display: flex;margin-top:20px;">
+                        <!-- <input type="text" placeholder="Account No.." class="form-control" id="Account_Number">  <button class="btn btn-warning" type="submit">Search</button> -->
+                         <select name="" id="status" class="form-control">
+                            <option value="" disabled selected>Select status and Search ......</option>
+                            <option value="pending">pending checks</option>
+                            <option value="canceled">canceled checks</option>
+                            <option value="cleared">cleared</option>
+                         </select>
+                         <button class="btn btn-warning bb" type="submit">Search</button>
+                    </form>
+                     
+                    <center><small id="status_error"></small></center>
+                 </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- show Customer  -->
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">SR.NO</th>
+                <th scope="col">check No</th>
+                <th scope="col">From </th>
+                <th scope="col">To</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Issue Date</th>
+                <th scope="col">Expire Date</th>
+                <th scope="col">status</th>
+                <!-- <th scope="col">Time</th> -->
+                
+             
+                <!-- <th scope="col">Handle</th> -->
+              </tr>
+            </thead>
+            <tbody class="table-group-divider" id="tbody" >
+            
+             
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+     <script src="/javascript/login_system_js/user_pages_Router_js/user_page_check_Router_js.js"></script>
+    
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/user_js.js/user_check_List_pagination_js.js"></script>
+</body>
+</html>

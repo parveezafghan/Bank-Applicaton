@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/services_style_css.css" />
+  <link rel="stylesheet" href="/Bootsrap/bootstrap.css" />
+  <link rel="stylesheet" href="/css/all.css">
+
+  <style>
+    /*  Nav Bar css */
+
+
+
+
+    .card {
+
+      height: 200px;
+      width: 350px;
+      background: rgb(26, 26, 26);
+      color: rgb(223, 216, 216);
+
+      border-radius: 10px;
+      box-shadow: 2px 2px 4px rgb(239, 233, 223);
+      font-weight: bold;
+      margin-left:20px;
+      margin-top:20px;
+    }
+
+    .header {
+
+      padding-bottom: 20px;
+      padding-top: 13px;
+    }
+
+    .header1 {
+
+      padding-left: 10px;
+
+
+    }
+
+    .header2 {
+
+      padding-left: 150px;
+
+
+    }
+
+
+
+    .img {
+
+      margin-left: 30px;
+    }
+
+    .img_11 {
+
+
+      border-radius: 5px;
+    }
+
+    .img_22 {
+
+      margin-left: 180px;
+    }
+
+    .number {
+
+      padding-left: 35px;
+      padding-top: 15px;
+    }
+
+    .no {
+
+      padding-left: 15px;
+    }
+
+    .futter {
+
+      padding-top: 30px;
+
+    }
+
+    .fu_1 {
+
+      padding-left: 10px;
+    }
+
+    .fu_2 {
+
+      padding-left: 180px;
+    }
+
+    .h_3_1{
+
+      font-size:25px;
+      font-weight: bold;
+      font-style: normal;
+      color: rgb(88, 227, 181);
+
+
+    }
+
+    .h_3{
+
+      font-size:40px;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    .card:hover{
+
+      transition:all 1.5s ease-in-out;
+      margin-top:-40px;
+      margin-left:-25px;
+      /* margin-right:10px; */
+    }
+    
+    @media (max-width:991px){
+
+      .card{
+
+        margin-left:30%;
+
+      }
+    }
+
+    @media (max-width:576px){
+
+       .card{
+
+        margin-left:20%;
+        margin-top:100px;
+       }
+    }
+
+    .card_1{
+
+       
+       border-radius: 10px;
+      box-shadow: -2px -2px 10px rgb(239, 233, 223);
+      width:430px;
+      height:250px;
+      border:10px solid white;
+      margin-left:70px;
+
+      
+
+    }
+
+    .card_button{
+
+      border: none;
+      outline: none;
+      border-radius:25px;
+      color: white;
+      background:rgb(98, 129, 222);
+      height:40px;
+      width:150px;
+      margin-left:20px;
+    }
+    .card_button:hover{
+
+      background:rgb(77, 55, 220);
+      
+    }
+    .cardP{
+
+      padding-left:5px;color: rgb(119, 219, 239);font-size: large; 
+      padding-top:3px;
+    }
+
+    .card_1:hover{
+
+      transition: all 0.5s ease-in-out;
+      margin-top:-50px;
+       box-shadow: 5px 5px 10px rgb(147, 147, 120);
+
+
+
+    }
+
+    .card_h3{
+
+
+      padding-left:5px;font-weight: bold;
+    }
+    .card_pp{
+
+      padding-left:5px;
+      font-size:16px;
+      font-family: roboto;
+    }
+
+    @media (max-width:991px){
+
+      .card_1{
+
+        margin-top:50px;
+        margin-left:30%;
+      }
+    }
+
+    @media (max-width:800px){
+
+      .card_1{
+
+        margin-left:10%;
+      }
+    }
+
+    body{
+
+      font-family: roboto;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Nav Bar html -->
+
+  <div class="navbar">
+    <div class="log">AFGHAN Bank</div>
+
+    <div class="menu-toggle" onclick="togglem()">
+      <i class="fa-solid fa-bars"> </i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+      <ul>
+        <li><a href="/Home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">contact us</a></li>
+        <li><a href="/login">Login</a></li>
+        <li><a href="/Admin_login">Admin</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Body part 1 html -->
+  <div class="container-fluid b-color margin-top">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Our Features & Services</h2>
+        <p>
+          Our Bank Provide Better Transication & Check System For our
+          Customers
+        </p>
+
+        <div>
+          <button class="Button_one">Transication</button>
+          <button class="Button_two">Check</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="/image/Side_2_img.jpg" alt="" width="100%" />
+      </div>
+    </div>
+  </div>
+
+  <!-- body Last part -->
+
+  <div class="container-fluid" style="margin-top: 100px">
+    <div class="row">
+      <div class="col-md-3" style="padding-left: 30px">
+        <small class="Small_" style="padding-top: 30px">Our Services</small>
+        <h3 class="H_3_3">
+          We Provide A lot of <br />
+          Cool Services
+        </h3>
+
+        <small class="small_font" style="text-overflow: clip">
+          AFGHAN Bank is committed to <br />
+          protecting customer information through strong <br />
+          security system and Advance encryption <br />
+          We continously monitor Transaction to <br />
+          prevent Fraud and ensure the safety of all <br />
+          financial activities</small>
+        <br />
+        <button class="Button">Our Services</button>
+      </div>
+
+      <div class="col-md-9 Flex">
+        <div class="Box">
+          <img class="img_" src="/Money_image.jpg" alt="" />
+          <h4 class="box_h4">Transication</h4>
+          <small class="box_small">Our Bank Provide Transication over The World
+          </small>
+        </div>
+
+        <div class="Box">
+          <img class="img_" src="/Loan_image.jpg" alt="" />
+          <h4 class="box_h4">Quick Loan</h4>
+          <small class="box_small">Our Bank Provide Better Loan System
+          </small>
+        </div>
+
+        <div class="Box">
+          <img class="img_" src="/image/Bank_image.jpg" alt="" />
+          <h4 class="box_h4">Check Facilities</h4>
+          <small class="box_small">We Provide check System Like Send & Reject
+          </small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12" > <center><h3 class="h_3_1">Compare & Applay</h3></center></div>
+      <div class="col-sm-12"><center><h3 class="h_3">Find Your Ideal Card</h3></center></div>
+    </div>
+  </div>
+
+
+  <div class="container" style="margin-top:100px;margin-bottom:50px;">
+    <div class="row">
+      <div class="col-sm-4 card" >
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2">Credit Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+
+      </div>
+
+      
+
+      <div class="col-sm-4 card" style="background:#7fa856;" >
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2">Debit Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img style="display: none;" class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+      </div>
+
+      <div class="col-sm-4 card"  style="background: rgb(88, 156, 149);">
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2">Prepaid Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img style="display: none;" class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+      </div>
+
+       <div class="col-sm-4 card"  style="background:rgb(156, 134, 156);">
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2"> VISA Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img style="display: none;" class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+      </div>
+
+       <div class="col-sm-4 card"  style="background:rgb(97, 117, 134)">
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2">ATM Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img style="display: none;" class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+      </div>
+
+       <div class="col-sm-4 card"  style="background:rgb(160, 157, 126)">
+        <div class="header"><small class="header1">AFGHAN</small> <small class="header2">Master Card</small></div>
+        <div class="img"><img src="/image/SM_card.jpg" alt="" class="img_11" width="10%"> <img style="display: none;" class="img_22"
+            src="/image/wifi.jpg" width="10%" alt=""></div>
+        <div class="number"><small class="no">1234</small> <small class="no">4567</small> <small class="no">9887</small>
+          <small class="no">1232</small></div>
+        <div class="futter"><small class="fu_1">Parveez</small> <small class="fu_2">2/3/2030</small></div>
+      </div>
+
+    </div>
+
+
+     <div class="container" style="margin-top:100px;">
+    <div class="row">
+      <div class="col-sm-12" > <center><h3 class="h_3_1">Job We Provide</h3></center></div>
+      <div class="col-sm-12"><center><h3 class="h_3">Unlock Your Career</h3></center></div>
+    </div>
+  </div>
+
+
+    <div class="container-fluid" style="margin-top:40px;">
+      <div class="row">
+        <div class="col-lg-6">
+         <div class="card_1">
+           <p  class="cardP">Management</p>
+          <h3 class="card_h3" >Office Manger</h3>
+          <p class="card_pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum  Odit ex, facere eveniet provident at quaerat aliquid sunt quibusdam natus.</p>
+          <button class="card_button">Apply Now</button>
+         </div>
+        </div>
+        <div class="col-lg-6">
+           <div class="card_1">
+           <p  class="cardP">Develpment</p>
+          <h3 class="card_h3" >Backend Developer</h3>
+          <p class="card_pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum  Odit ex, facere eveniet provident at quaerat aliquid sunt quibusdam natus.</p>
+          <button class="card_button">Apply Now</button>
+         </div>
+        </div>
+        <div class="col-lg-6" style="margin-top:50px;">
+           <div class="card_1">
+           <p  class="cardP">Design</p>
+          <h3 class="card_h3" >Frontend Developer</h3>
+          <p class="card_pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum  Odit ex, facere eveniet provident at quaerat aliquid sunt quibusdam natus.</p>
+          <button class="card_button">Apply Now</button>
+         </div>
+        </div>
+        <div class="col-lg-6" style="margin-top:50px;">
+           <div class="card_1">
+           <p  class="cardP">Finance</p>
+          <h3 class="card_h3" >Branch Manager</h3>
+          <p class="card_pp">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum  Odit ex, facere eveniet provident at quaerat aliquid sunt quibusdam natus.</p>
+          <button class="card_button">Apply Now</button>
+         </div>
+        </div>
+
+
+       
+        
+
+         
+
+      </div>
+    </div>
+    <script>
+      function togglem() {
+        var meanu = document.getElementById("nav-links");
+
+        if (meanu.style.display == "block") {
+          meanu.style.display = "none";
+        } else {
+          meanu.style.display = "block";
+        }
+      }
+    </script>
+</body>
+
+</html>

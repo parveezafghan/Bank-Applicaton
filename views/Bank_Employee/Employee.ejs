@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="/Bootsrap/bootstrap.css" />
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_css.css">
+    <link rel="stylesheet" href="/css/Bank_Employee_css/Bank_Employee_change_password_css.css">
+  
+
+</head>
+
+
+<style>
+
+    body{
+
+        z-index:1000;
+    }
+    .table {
+
+        display: none;
+    }
+
+    .show {
+
+        display: block;
+    }
+
+    ul li a {
+
+        font-family: roboto;
+        font-weight: bold;
+    }
+
+
+
+
+
+    
+    .con{
+
+             width:300px;
+            height:570px;
+            /* border:1px solid red; */
+            margin-left:400px;
+            margin-top:-50px;
+            background:#efefef;
+            border-radius:10px;
+            box-shadow:2px 4px 4px rgb(228, 212, 212);
+            position:absolute;
+            display: none;
+            /* border: 10px solid red; */
+
+            z-index:1;
+        
+
+        }
+
+        .con:hover{
+
+             transition: all 0.50s ease-in-out;
+            box-shadow: 5px 5px 10px rgb(147, 147, 120);
+            border-radius:30px;
+        }
+
+         img{
+            /* border:1px solid red; */
+            border-radius:50%;
+            width:50%;
+            margin-top:15px;
+             
+            
+        }
+
+         img:hover{
+
+            box-shadow:2px 4px 4px rgb(228, 212, 212)
+            /* box-shadow: 2px 2px 4px rgb(225, 215, 199); */
+        }
+
+        .div_Title{
+
+            padding-top:30px;
+        }
+        .Title{
+
+            padding-left:30%;
+            margin-top:15px;
+            font-size:20px;
+            font-weight: bold;
+            
+            
+        }
+
+        .div_info{
+
+            width:100%;
+            height:130px;
+            margin-top:30px;
+            display:flex;
+            flex-direction: column;
+            /* border:5px solid wheat; */
+        }
+        
+        .info{
+
+            font-size:15px;
+            margin-left:10px;
+            margin-top:5px;
+            /* border:1px solid red; */
+            margin-top:5px;
+            font-family: roboto;
+            font-weight:400;
+        
+        }
+        .media{
+
+            width:100%;
+            height:100px;
+            /* border:1px solid red; */
+            display: flex;
+            justify-content:space-evenly;
+            margin-top:10px;
+        }
+
+        .img_media{
+
+            width:15%;
+            height:20px;
+            
+        } 
+
+        .img_media{
+
+            width:15%;
+            height:20px;
+            
+        }
+
+        .add_profile{
+
+            display: block;
+        }
+
+        @media (max-width:850px){
+
+            .con{
+                margin-left:300px;
+            }
+        }
+
+        @media (max-width:700px){
+
+            .con{
+
+                margin-left:200px;
+            }
+        }
+        @media (max-width:550px){
+
+            .con{
+                margin-left:100px;
+            }
+        }
+        
+
+</style>
+
+<body>
+    <!-- Nav bar css and Boostrap -->
+
+
+    <small id="user" data-id="<%= id%>"></small>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow nav-underline ">
+        <div class="container-fluid ">
+            <a class="navbar-brand " href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <!-- <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/Home_page_system.html">Home</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link H" href="#" id="Customer_list">Show Customer </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <!-- <a class="nav-link" href="/Service_page_system.html">Services </a> -->
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" >
+                            <li><a class="dropdown-item" id="show_profile" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#"  id="Widraw_Account" >Change Password</a></li>
+                            <!-- <a href="" id="Widraw_Account"  >Widthraw</a>
+                            <div class="dropdown" id="dropdownMenu">
+                                <div class="password">
+                                    <form id="loginForm">
+                                        <input type="text" placeholder="Username" /><br /><br />
+                                        <input type="password" placeholder="Password" /><br /><br />
+                                        <button type="submit">Login</button>
+                                    </form>
+                                </div>
+                            </div> -->
+                            <li><a class="dropdown-item" href="#" id="logout">Logout</a></li>
+                            <li><a href="#" class="dropdown-item" id="change_card_and_Account_status">change
+                                    Card/Account Status</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_check_list">check List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Debit_list">Debit List</a></li>
+                            <li><a class="dropdown-item" href="#" id="show_Credit_list">Credit List</a></li>
+                            <!-- <li><a  class="dropdown=item" id="show_Transfer_List">Transfer List</a></li> -->
+                            <li><a class="dropdown-item" href="#" id="show_Transfer_List">Transfer List</a></li>
+
+                            <li>
+                                <hr class="dropdown-divider" />
+                            </li>
+                            <li>
+                                <!-- <a class="dropdown-item" href="#">Something else here</a> -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="contact_us">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="Status">Status</a>
+                    </li>
+                </ul>
+
+
+                <h2 class="h2">AFGHAN Bank</h2>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Body part 1 html -->
+
+    
+
+    <div class="container-fluid my-1 height style">
+        <div class="row">
+            <div class="col-sm-6 head" style="font-family: roboto;font-weight: bold;font-size:25px;">Welcome To Employee Dashboard</div>
+            <div class="col-6" style="display: flex; justify-content: end">
+                <a href="" id="logout_1">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="con" id="profile">
+                    <div class="img_con">
+                        <center> <img src="/image/p.jpg.png" alt=""></center>
+                    </div>
+                    <div class="div_Title">
+                        <small class="Title" id="Title">Parveez Afghan</small>
+                        <hr style="border:1px solid black; margin:10px;">
+
+                    </div>
+                    <div class="div_info">
+                        <small class="info" id="user_name">User Name :  </small>
+                        <small class="info" id="Role">Role     : </small>
+                        <small class="info" id="Eamil">Eamil : </small>
+                        <small class="info" id="Gender">Gender : </small>
+                        <small class="info" id="Phone" >Phone: </small>
+                        <small class="info" id="password_">Password : </small>
+                        <small class="info" id="pin_code">PinCode  :</small>
+
+                    </div>
+
+                    <div style="margin-top:65px;"><small class="Title">Contact</small></div>
+                    <div class="media">
+                        <img class="img_media" src="/image/instagram.jpg" alt="Error">
+                        <img class="img_media" src="/image/linkdon.jpg" alt="Error">
+                        <img class="img_media" src="/image/Phone_image.jpg" alt="Error">
+                        <img class="img_media" src="/image/Eamil.jpg" alt="">
+                    </div>
+                </div>
+
+
+    <!-- Body part 2 html -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: center">
+                <h2>Account Details</h2>
+            </div>
+        </div>
+    </div>
+
+
+
+     <!-- <a href="" id="Widraw_Account"  >Widthraw</a> -->
+                            <div class="password_box" id="dropdownMenu_1" >
+                                <div class="password">
+                                    <form id="password_form">
+                                        <input type="text" placeholder="Previous Password" id="Previous_Password" /><br /><br />
+                                        <small id="previous_erro"></small> <br>
+
+                                        <input type="text" placeholder="New Password" id="new_password" /><br /><br />
+                                         <small id="new_password_error"></small> <br>
+                                        <button type="submit" class="button__">chanage Password</button>
+                                    </form>
+                                </div>
+                            </div> 
+
+ 
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12">
+                <ul class="nav nav-tabs justify-content-around">
+                    <li class="nav-item">
+                        <a class="nav-link active color" aria-current="page" href="#" id="Account_Details">Account
+                            Details</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Add_customer">Add Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Remove_customer">Remove Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Credit_Funds" aria-disabled="true">Credit Funds</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Debit_Funds" aria-disabled="true">Debit Funds</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="Transfer_funds" aria-disabled="true">Transfer Fund</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link color" href="#" id="check_pay">pay check</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12" style="display: flex; justify-content: center">
+                <h3>Find Account Details</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Body part 5 html -->
+
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-12">
+                <form id="form">
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping"></span>
+                        <input type="text" class="form-control" id="account_number" placeholder="Enter Account Number"
+                            aria-label="Username" aria-describedby="addon-wrapping" />
+                        <!-- <button class="btn btn-primary">Find Details</button> -->
+                        <button type="submit" class="btn btn-outline-primary">
+                            Find Details
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- body part 5 html Table of Details -->
+
+
+
+
+    <div class="container">
+        <div class="row">
+
+
+
+            <div class="col-lg-12 ">
+                <table class="table  table-striped table-hover " id="table">
+
+                    <head id="head">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>F Name</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Account No</th>
+                            <th>Accout Type</th>
+                            <th>Balance</th>
+                            <th>Card Type</th>
+                            <th>Card No</th>
+                            <th>Card ex Date</th>
+                            <th>pin Code</th>
+
+                        </tr>
+                    </head>
+
+                    <body id="body">
+
+                        <tr>
+                            <td id="First_Name"></td>
+                            <td id="Last_Name"></td>
+
+                            <td id="Father_Name"></td>
+                            <td id="User_Name"></td>
+                            <td id="password"></td>
+                            <td id="account_no"></td>
+                            <td id="account_type"></td>
+                            <td id="Balance"></td>
+                            <td id="card_type"></td>
+                            <td id="card_no"></td>
+                            <td id="ex_date_"></td>
+                            <td id="pin_co"></td>
+
+                        </tr>
+
+                    </body>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+        const profile=document.getElementById("profile");
+
+     const show_profile=document.getElementById('show_profile');
+     console.log(show_profile);
+     console.log(profile);
+
+     show_profile.addEventListener('click',(e)=>{
+
+
+        e.preventDefault();
+        // alert('click')
+
+        profile.classList.toggle('add_profile');
+     })
+
+     </script>
+
+
+
+    <script src="javascript/login_system_js/Employee_pages_Router_js/Employee_page_Router_js.js"></script>
+    <script src="/Bootsrap/bootstrap.bundle.min.js"></script>
+    <script src="/javascript/login_system_js/Employee_js/Find_Account_Details_js.js"></script>
+    <script src="/javascript/login_system_js/Employee_js/Employee_change_password_js.js"></script>
+    <script src="/javascript/login_system_js/Employee_js/Employee_Profile_data_js.js"></script>
+</body>
+
+</html>
